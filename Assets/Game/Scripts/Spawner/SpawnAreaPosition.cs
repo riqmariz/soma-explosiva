@@ -1,0 +1,22 @@
+﻿public enum SpawnAreaPosition
+{
+    BossRegion,
+    Inside,
+    InsideTop,
+    InsideTopCenter,
+    InsideTopLeft,
+    InsideTopRight,
+    InsideCenter,
+    InsideLeft,
+    InsideRight,
+    InsideCenterCenter,
+    InsideCenterRight,
+    InsideCenterLeft,
+    OutsideTop,
+    OutsideLeft,
+    OutsideRight,
+    OutsideTopCenter,
+    OutsideTopLeft,
+    OutsideTopRight,
+    OutsideInsideTop,
+}
