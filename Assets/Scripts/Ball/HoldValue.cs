@@ -1,40 +1,41 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
 using TMPro;
-using System;
+using UnityEngine;
 
-public class HoldValue : MonoBehaviour
+namespace Ball
 {
-    [SerializeField] private int _value;
-    [SerializeField] private TextMeshPro valueField;
-
-
-    public int Value 
+    public class HoldValue : MonoBehaviour
     {
-        get 
+        [SerializeField] private int _value;
+        [SerializeField] private TextMeshPro valueField;
+
+
+        public int Value 
         {
-            return _value;
+            get 
+            {
+                return _value;
+            }
+            set 
+            {
+                _value = value;
+                UpdateField();
+            }
         }
-        set 
+
+        private void UpdateField() 
         {
-            _value = value;
+            valueField.text = Value.ToString();
+        }
+
+        public void ApplyModifier(Func<int,int> modifier) 
+        {
+            Value = modifier(Value);
+        }
+
+        private void OnValidate()
+        {
             UpdateField();
         }
-    }
-
-    private void UpdateField() 
-    {
-        valueField.text = Value.ToString();
-    }
-
-    public void ApplyModifier(Func<int,int> modifier) 
-    {
-        Value = modifier(Value);
-    }
-
-    private void OnValidate()
-    {
-        UpdateField();
     }
 }
