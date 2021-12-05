@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using Ball;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Path
 {
@@ -6,8 +9,7 @@ namespace Path
     {
         [SerializeField] private int m_ballsToLose;
 
-        // Update is called once per frame
-        void Update()
+        private void Update()
         {
             if (m_ballsToLose <= 0)
             {
@@ -17,7 +19,18 @@ namespace Path
 
         private void GameOver()
         {
+            Debug.Log("Game Over");
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            var ball = other.GetComponent<PathBall>();
+            if (!ball) return;
             
+            Debug.Log("Ball entered end point");
+            m_ballsToLose--;
+            Destroy(ball.transform.parent.gameObject);
         }
     }
 }
