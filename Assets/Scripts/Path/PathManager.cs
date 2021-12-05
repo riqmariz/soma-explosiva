@@ -68,11 +68,11 @@ namespace Path
             var ball = Instantiate(m_ballPrefab, transform).GetComponentInChildren<PathBall>();
             var speed = lastBall.Speed;
 
-            var position = lastBall.Position + ((hitIndex < index) ? +0.75f : -0.75f );
+            var position = lastBall.Position;
             ball.InitBall(m_path, position, speed, value);
             m_currentSpawnedBalls.Insert(index,ball);
-
-            for (int i = index; i < m_currentSpawnedBalls.Count; i++) 
+            
+            for (int i = hitIndex; i >= 0; i--) 
             {
                 m_currentSpawnedBalls[i].OffsetPosition(+0.75f);
             }

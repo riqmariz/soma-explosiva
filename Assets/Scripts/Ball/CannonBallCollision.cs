@@ -16,8 +16,8 @@ public class CannonBallCollision : MonoBehaviour
             PathManager manager = GameObject.FindObjectOfType<PathManager>();
             int otherBallIndex = manager.Balls.IndexOf(otherBall);
             var befAf = otherBall.BeforeAfterBall;
-            float diftBef = Vector3.Distance(transform.position, befAf.Item1.position);
-            float diftAf = Vector3.Distance(transform.position, befAf.Item2.position);
+            float diftBef = Vector3.Distance(transform.position, befAf.Item2.position);
+            float diftAf = Vector3.Distance(transform.position, befAf.Item1.position);
 
             if (diftBef < diftAf)
             {
