@@ -2,7 +2,6 @@
 using Cinemachine;
 using TMPro;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Ball
 {
@@ -21,11 +20,6 @@ namespace Ball
         [SerializeField] private int m_value;
         [SerializeField] private TextMeshPro m_valueText;
         #endregion
-        
-        #region TEST
-        [Header("TEST")]
-        [SerializeField] private CinemachineSmoothPath m_path;
-        #endregion
 
         #region Properties
         public float Position => m_cartController.m_Position;
@@ -41,7 +35,6 @@ namespace Ball
             
             if(!m_sphere)
                 m_sphere = transform;
-            
         }
         #endregion
         

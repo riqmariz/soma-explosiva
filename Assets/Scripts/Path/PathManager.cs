@@ -18,7 +18,7 @@ namespace Path
                 m_currentSpawnedBalls = new List<PathBall>();
 
             if (!m_path)
-                m_path.GetComponent<CinemachineSmoothPath>();
+                m_path = FindObjectOfType<CinemachineSmoothPath>();
             
             SpawnBall();
         }
@@ -43,7 +43,7 @@ namespace Path
 
         private void SpawnBall(PathBall lastBall)
         {
-            var ball = Instantiate(m_ballPrefab, transform).GetComponentInChildren<PathBall>();
+            var ball = Instantiate(m_ballPrefab,transform).GetComponentInChildren<PathBall>();
             var speed = lastBall.Speed;
             var position = lastBall.Position - 0.75f;
             var value = Random.Range(1, 11);
