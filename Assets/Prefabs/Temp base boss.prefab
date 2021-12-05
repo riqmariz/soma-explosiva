@@ -134,6 +134,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initHp: 3
   bossHp: {fileID: 11400000, guid: 92f17c31f7d62ad45af796acd4c9178e, type: 2}
+  bossTargetValue: {fileID: 11400000, guid: 67147d463762e7945bac250a80d26093, type: 2}
+  invulnerabilityTimeAfterDamage: 3
+  onInvalidHit: {fileID: 11400000, guid: dc1ad3e813e693244a17cf00125c1cc0, type: 2}
+  onValidHit: {fileID: 11400000, guid: 5ab4195b1204dc547b1fdf3da59cd5a5, type: 2}
 --- !u!114 &2013487685560505112
 MonoBehaviour:
   m_ObjectHideFlags: 0
