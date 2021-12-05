@@ -5,6 +5,7 @@ namespace Ball
     public class MoveToDirection : MonoBehaviour
     {
         [SerializeField] private float m_speed;
+        [SerializeField] private Renderer m_renderer;
         private Vector2 m_direction;
 
         public float Speed 
@@ -27,6 +28,9 @@ namespace Ball
         void Update()
         {
             transform.position += ((Vector3)Direction) * Speed * Time.deltaTime;
+
+            if (!m_renderer.isVisible)
+                Destroy(this.gameObject);
         }
     }
 }
