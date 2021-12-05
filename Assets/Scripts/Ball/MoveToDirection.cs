@@ -1,31 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class MoveToDirection : MonoBehaviour
+namespace Ball
 {
-    [SerializeField] private float m_speed;
-    private Vector2 m_direction;
+    public class MoveToDirection : MonoBehaviour
+    {
+        [SerializeField] private float m_speed;
+        private Vector2 m_direction;
 
-    public float Speed 
-    {
-        get { return m_speed; }
-        set 
+        public float Speed 
         {
-            m_speed = value;
+            get { return m_speed; }
+            set 
+            {
+                m_speed = value;
+            }
         }
-    }
-    public Vector2 Direction
-    {
-        get { return m_direction; }
-        set 
+        public Vector2 Direction
         {
-            m_direction = value.normalized;
+            get { return m_direction; }
+            set 
+            {
+                m_direction = value.normalized;
+            }
         }
-    }
 
-    void Update()
-    {
-        transform.position += ((Vector3)Direction) * Speed * Time.deltaTime;
+        void Update()
+        {
+            transform.position += ((Vector3)Direction) * Speed * Time.deltaTime;
+        }
     }
 }
