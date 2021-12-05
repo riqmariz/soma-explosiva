@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Ball;
 using UnityEngine;
 
 
@@ -10,8 +11,13 @@ public class FireBall : MonoBehaviour
     [SerializeField] private FollowPointer directionManager;
     [SerializeField] private float ballSpeed = 4;
     [SerializeField] private ModifierManager modManager;
+    [SerializeField] private float fireRate = 2f;
     public delegate int ModifierDelegate(int value);
     private ModifierDelegate currentModifier;
+
+    private float lastTimeFired = 0f;
+
+    public float TimeBetwennFireBalls => 1f / fireRate;
 
     private void Start()
     {
@@ -21,6 +27,10 @@ public class FireBall : MonoBehaviour
 
     public void Fire()
     {
+        if (Time.time - lastTimeFired < TimeBetwennFireBalls)
+            return;
+
+        lastTimeFired = Time.time;
         var ball = Instantiate(BallPrefab.gameObject, null).GetComponent<MoveToDirection>();
         ball.Direction = directionManager.GetDirection();
         ball.transform.position = InitialBallPosition;
