@@ -11,6 +11,8 @@ namespace Path
         [SerializeField] private int m_ballsToSpawn;
         [SerializeField] private CinemachineSmoothPath m_path;
         [SerializeField] private List<PathBall> m_currentSpawnedBalls;
+
+        public List<PathBall> Balls => m_currentSpawnedBalls;
         
         private void Start()
         {
@@ -57,6 +59,23 @@ namespace Path
             var value = Random.Range(1, 11);
             ball.InitBall(m_path, 0f, 1f, value);
             m_currentSpawnedBalls.Add(ball);
+        }
+
+        public void SpawnBallAt(int hitIndex,int index, int value) 
+        {
+            var lastBall = m_currentSpawnedBalls[hitIndex];
+
+            var ball = Instantiate(m_ballPrefab, transform).GetComponentInChildren<PathBall>();
+            var speed = lastBall.Speed;
+
+            var position = lastBall.Position + ((hitIndex < index) ? +0.75f : -0.75f );
+            ball.InitBall(m_path, position, speed, value);
+            m_currentSpawnedBalls.Insert(index,ball);
+
+            for (int i = index; i < m_currentSpawnedBalls.Count; i++) 
+            {
+                m_currentSpawnedBalls[i].OffsetPosition(+0.75f);
+            }
         }
     }
 }

@@ -13,6 +13,8 @@ namespace Ball
         [SerializeField] private CinemachineDollyCart m_cartController;
         [SerializeField] private float m_speedMultiplier = 1f;
         [SerializeField] private Transform m_sphere;
+        [SerializeField] private Transform m_jillisAfterBall;
+        [SerializeField] private Transform m_jillisBeforeBall;
         private const float m_speed = 1f;
         #endregion
 
@@ -30,6 +32,8 @@ namespace Ball
         #region Properties
         public float Position => m_cartController.m_Position;
         public float Speed => m_speedMultiplier;
+
+        public Tuple<Transform, Transform> BeforeAfterBall => new Tuple<Transform, Transform>(m_jillisBeforeBall,m_jillisAfterBall);
 
         #endregion
 
