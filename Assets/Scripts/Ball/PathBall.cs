@@ -13,7 +13,7 @@ namespace Ball
         [SerializeField] private CinemachineDollyCart m_cartController;
         [SerializeField] private float m_speedMultiplier = 1f;
         [SerializeField] private Transform m_sphere;
-        private const float Speed = 2f;
+        private const float m_speed = 1f;
         #endregion
 
         #region Value
@@ -27,6 +27,12 @@ namespace Ball
         [SerializeField] private CinemachineSmoothPath m_path;
         #endregion
 
+        #region Properties
+        public float Position => m_cartController.m_Position;
+        public float Speed => m_speedMultiplier;
+
+        #endregion
+
         #region Monobehaviour Methods
         private void Start()
         {
@@ -36,17 +42,15 @@ namespace Ball
             if(!m_sphere)
                 m_sphere = transform;
             
-            //Test-only
-            InitBall(m_path, Random.Range(1, 11));
         }
         #endregion
-
-        public void InitBall(CinemachineSmoothPath path, int value)
+        
+        public void InitBall(CinemachineSmoothPath path, float position, float speed, int value)
         {
             m_cartController.m_Path = path;
-            //m_cartController.m_Position = 0f;
+            SetPosition(position);
             SetValue(value);
-            SetSpeed(m_speedMultiplier);
+            SetSpeed(speed);
         }
 
         private void SetValue(int value)
@@ -54,15 +58,21 @@ namespace Ball
             m_value = value;
             m_valueText.text = m_value.ToString();
         }
-
-        /// <summary>
-        /// Set speed of the current path ball instance
-        /// </summary>
-        /// <param name="speed">Use positive speeds to move the ball forward, zero to stop the ball and negative to move it backwards</param>
+        
         public void SetSpeed(float speed)
         {
             m_speedMultiplier = speed;
-            m_cartController.m_Speed = m_speedMultiplier * Speed;
-        } 
+            m_cartController.m_Speed = m_speedMultiplier * m_speed;
+        }
+
+        public void SetPosition(float position)
+        {
+            m_cartController.m_Position = position;
+        }
+
+        public void OffsetPosition(float offset)
+        {
+            m_cartController.m_Position += offset;
+        }
     }
 }
