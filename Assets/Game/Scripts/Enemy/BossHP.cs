@@ -1,5 +1,4 @@
-﻿using SharedData.Events;
-using SharedData.Values;
+﻿using SharedData.Values;
 using UnityEngine;
 using Utility;
 using Event = SharedData.Events.Event;

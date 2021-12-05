@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2013487685560505116}
   - component: {fileID: 2013487685560505115}
   - component: {fileID: 2013487685560505113}
+  - component: {fileID: 9036074261196589058}
   - component: {fileID: 2013487685560505112}
   m_Layer: 0
   m_Name: Temp base boss
@@ -138,6 +139,26 @@ MonoBehaviour:
   invulnerabilityTimeAfterDamage: 3
   onInvalidHit: {fileID: 11400000, guid: dc1ad3e813e693244a17cf00125c1cc0, type: 2}
   onValidHit: {fileID: 11400000, guid: 5ab4195b1204dc547b1fdf3da59cd5a5, type: 2}
+--- !u!114 &9036074261196589058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013487685560505119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e0c91b9776e5604f9f0701f99bb5333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossQuestions:
+  - {fileID: 11400000, guid: c7310ab81f0538f42badddafe1662bb3, type: 2}
+  - {fileID: 11400000, guid: 7d67500ed3999df45b1b682b5c5284de, type: 2}
+  - {fileID: 11400000, guid: 94b5a85a552931e42b2b497edce0a24e, type: 2}
+  targetValue: {fileID: 11400000, guid: 67147d463762e7945bac250a80d26093, type: 2}
+  questionValue: {fileID: 11400000, guid: 9cbc3a283bb314e4db05cf199150a865, type: 2}
+  onValidHit: {fileID: 11400000, guid: 5ab4195b1204dc547b1fdf3da59cd5a5, type: 2}
+  onKillBoss: {fileID: 11400000, guid: 7bf80d1ae95c4a44c97677e39139c396, type: 2}
 --- !u!114 &2013487685560505112
 MonoBehaviour:
   m_ObjectHideFlags: 0

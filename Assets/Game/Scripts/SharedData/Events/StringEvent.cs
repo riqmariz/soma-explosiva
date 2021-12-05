@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using SharedData.Events.Generics;
 
 namespace SharedData.Events {
@@ -11,3 +10,6 @@ namespace SharedData.Events {
     {   
     }
 }
+
+
+
