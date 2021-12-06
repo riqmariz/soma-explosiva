@@ -10,7 +10,8 @@ namespace Path
         [SerializeField] private GameObject m_ballPrefab;
         [SerializeField] private int m_ballsToSpawn;
         [SerializeField] private CinemachineSmoothPath m_path;
-        [SerializeField] private List<PathBall> m_currentSpawnedBalls;
+        [SerializeField] private List<int> m_currentBallsValues; 
+        private List<PathBall> m_currentSpawnedBalls;
 
         public List<PathBall> Balls => m_currentSpawnedBalls;
         
@@ -48,7 +49,7 @@ namespace Path
             var ball = Instantiate(m_ballPrefab,transform).GetComponentInChildren<PathBall>();
             var speed = lastBall.Speed;
             var position = lastBall.Position - 0.75f;
-            var value = Random.Range(1, 11);
+            var value = Random.Range(1, 5);
             ball.InitBall(m_path, position, speed, value);
             m_currentSpawnedBalls.Add(ball);
         }
@@ -75,6 +76,52 @@ namespace Path
             for (int i = hitIndex; i >= 0; i--) 
             {
                 m_currentSpawnedBalls[i].OffsetPosition(+0.75f);
+            }
+            
+            IdentifyMatches(index, ball.Value);
+        }
+
+        private void IdentifyMatches(int currentBallIndex, int targetValue)
+        {
+            var matches = new List<PathBall>();
+            
+            for (int i = currentBallIndex; i >= 0; i--)
+            {
+                if (m_currentSpawnedBalls[i].Value == targetValue)
+                {
+                    matches.Add(m_currentSpawnedBalls[i]);
+                }
+                else
+                {
+                    break;
+                }
+            }
+            
+            for (int i = currentBallIndex + 1; i < m_currentSpawnedBalls.Count; i++)
+            {
+                if (m_currentSpawnedBalls[i].Value == targetValue)
+                {
+                    matches.Add(m_currentSpawnedBalls[i]);
+                }
+                else
+                {
+                    break;
+                }
+            }
+            
+            DestroyMatches(matches);
+        }
+
+        private void DestroyMatches(List<PathBall> matchesToDestroy)
+        {
+            if (matchesToDestroy.Count >= 3)
+            {
+                foreach (var ball in matchesToDestroy)
+                {
+                    Debug.Log(ball.Value);
+                    m_currentSpawnedBalls.Remove(ball);
+                    Destroy(ball.transform.parent.gameObject);
+                }
             }
         }
     }

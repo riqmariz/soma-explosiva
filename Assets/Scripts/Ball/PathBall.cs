@@ -1,5 +1,6 @@
 ﻿using System;
 using Cinemachine;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
@@ -26,6 +27,8 @@ namespace Ball
         #region Properties
         public float Position => m_cartController.m_Position;
         public float Speed => m_speedMultiplier;
+
+        public int Value => m_value;
 
         public Tuple<Transform, Transform> BeforeAfterBall => new Tuple<Transform, Transform>(m_jillisBeforeBall,m_jillisAfterBall);
 

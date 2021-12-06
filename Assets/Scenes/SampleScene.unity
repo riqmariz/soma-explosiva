@@ -825,6 +825,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9059083184258349877, guid: e28e6f506270fc9498d4401564482937,
+        type: 3}
+      propertyPath: ballSpeed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 9059083184258349882, guid: e28e6f506270fc9498d4401564482937,
         type: 3}
       propertyPath: m_SpriteSortPoint
