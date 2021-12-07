@@ -7,11 +7,23 @@ namespace Path
 {
     public class PathManager : MonoBehaviour
     {
+        #region Path
+        [Header("Path")]
+        [SerializeField] private CinemachineSmoothPath m_path;
+        [SerializeField] private List<PathBall> m_currentSpawnedBalls;
+        #endregion
+        
+        #region Spawn
+        [Header("Spawn")]
         [SerializeField] private GameObject m_ballPrefab;
         [SerializeField] private int m_ballsToSpawn;
-        [SerializeField] private CinemachineSmoothPath m_path;
-        [SerializeField] private List<int> m_currentBallsValues; 
-        private List<PathBall> m_currentSpawnedBalls;
+
+        [Header("Spawn Probabilities")] 
+        [SerializeField] private int m_twoBallsComboPercentage = 70;
+        [SerializeField] private int m_threeBallsComboPercentage = 60;
+        [SerializeField] private int m_fourBallsComboPercentage = 50;
+        private int currentComboCount = 0;
+        #endregion
 
         public List<PathBall> Balls => m_currentSpawnedBalls;
         
@@ -49,7 +61,39 @@ namespace Path
             var ball = Instantiate(m_ballPrefab,transform).GetComponentInChildren<PathBall>();
             var speed = lastBall.Speed;
             var position = lastBall.Position - 0.75f;
-            var value = Random.Range(1, 5);
+
+            var random = Random.Range(1, 101);
+            var probability = 0;
+            var value = 0;
+            var possibleValues = new List<int> {1, 2, 3, 4};
+
+            
+            if (currentComboCount == 0)
+            {
+                probability = m_twoBallsComboPercentage;
+            }
+            else if (currentComboCount == 1)
+            {
+                probability = m_threeBallsComboPercentage;
+            }
+            else if (currentComboCount >= 2)
+            {
+                probability = m_fourBallsComboPercentage;
+            }
+
+            if (random <= probability)
+            {
+                value = lastBall.Value;
+                currentComboCount++;
+            }
+            else
+            {
+                possibleValues.Remove(lastBall.Value);
+                var index = Random.Range(0, possibleValues.Count);
+                value = possibleValues[index];
+                currentComboCount = 0;
+            }
+
             ball.InitBall(m_path, position, speed, value);
             m_currentSpawnedBalls.Add(ball);
         }
@@ -57,7 +101,7 @@ namespace Path
         private void SpawnBall()
         {
             var ball = Instantiate(m_ballPrefab, transform).GetComponentInChildren<PathBall>();
-            var value = Random.Range(1, 11);
+            var value = Random.Range(1, 5);
             ball.InitBall(m_path, 0f, 1f, value);
             m_currentSpawnedBalls.Add(ball);
         }
@@ -118,7 +162,6 @@ namespace Path
             {
                 foreach (var ball in matchesToDestroy)
                 {
-                    Debug.Log(ball.Value);
                     m_currentSpawnedBalls.Remove(ball);
                     Destroy(ball.transform.parent.gameObject);
                 }
