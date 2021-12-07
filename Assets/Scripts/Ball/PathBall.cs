@@ -66,6 +66,10 @@ namespace Ball
         {
             m_speedMultiplier = speed;
             m_cartController.m_Speed = m_speedMultiplier * m_speed;
+            if (speed > 0) 
+            {
+                awatingCollision = false;
+            }
         }
 
         public void SetPosition(float position)
