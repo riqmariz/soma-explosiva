@@ -17,6 +17,7 @@ namespace Path
         [Header("Spawn")]
         [SerializeField] private GameObject m_ballPrefab;
         [SerializeField] private int m_ballsToSpawn;
+        [SerializeField] private List<int> m_possibleValues = new List<int>();
 
         [Header("Spawn Probabilities")] 
         [SerializeField] private int m_twoBallsComboPercentage = 70;
@@ -34,6 +35,9 @@ namespace Path
 
             if (!m_path)
                 m_path = FindObjectOfType<CinemachineSmoothPath>();
+            
+            if (m_possibleValues == null)
+                m_possibleValues = new List<int>();
             
             SpawnBall();
         }
@@ -65,7 +69,12 @@ namespace Path
             var random = Random.Range(1, 101);
             var probability = 0;
             var value = 0;
-            var possibleValues = new List<int> {1, 2, 3, 4};
+            var possibleValues = new List<int>();
+
+            foreach (var possibleValue in m_possibleValues)
+            {
+                possibleValues.Add(possibleValue);
+            }
 
             
             if (currentComboCount == 0)
@@ -101,8 +110,9 @@ namespace Path
         private void SpawnBall()
         {
             var ball = Instantiate(m_ballPrefab, transform).GetComponentInChildren<PathBall>();
-            var value = Random.Range(1, 5);
-            ball.InitBall(m_path, 0f, 1f, value);
+            
+            var random = Random.Range(0, m_possibleValues.Count);
+            ball.InitBall(m_path, 0f, 1f, m_possibleValues[random]);
             m_currentSpawnedBalls.Add(ball);
         }
 

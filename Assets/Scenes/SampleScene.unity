@@ -924,7 +924,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &876452375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1476,6 +1476,7 @@ MonoBehaviour:
   m_ballPrefab: {fileID: 5093196894067277235, guid: 162584e2383cc3046bd603267c3fa28f,
     type: 3}
   m_ballsToSpawn: 100
+  m_possibleValues: 02000000030000000500000006000000
   m_twoBallsComboPercentage: 70
   m_threeBallsComboPercentage: 60
   m_fourBallsComboPercentage: 50
