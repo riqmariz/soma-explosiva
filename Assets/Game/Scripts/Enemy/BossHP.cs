@@ -19,6 +19,7 @@ public class BossHP : MonoBehaviour, ITakeDamage
     private Event onValidHit;
     
     private bool canTakeDamage = true;
+    private LayerMask _layerMask;
     
     //todo check if call the initialization on awake or on start
     private void Start()
@@ -47,8 +48,8 @@ public class BossHP : MonoBehaviour, ITakeDamage
                     Timers.CreateClock(
                         gameObject,
                         invulnerabilityTimeAfterDamage,
-                        () => setCanTakeDamage(false),
-                        () => setCanTakeDamage(true)
+                        () => StartInvulnerability(),
+                        () => EndInvulnerability()
                         );
                     //put this line on an animation script later
                     gameObject.GetComponent<SpriteRenderer>().AlphaFlash(invulnerabilityTimeAfterDamage, 0, 0.5f);
@@ -59,6 +60,8 @@ public class BossHP : MonoBehaviour, ITakeDamage
             {
                 onInvalidHit.Raise();
             }
+            //temp destroy
+            Destroy(damager.gameObject);
         }
 
         return false;
@@ -69,9 +72,16 @@ public class BossHP : MonoBehaviour, ITakeDamage
         return bossTargetValue.Value == targetValue;
     }
 
-    private void setCanTakeDamage(bool value)
+    private void StartInvulnerability()
     {
-        canTakeDamage = value;
+        canTakeDamage = false;
+        _layerMask = gameObject.layer;
+        gameObject.layer = LayerMask.NameToLayer("Invulnerable");
+    }
+    private void EndInvulnerability()
+    {
+        canTakeDamage = true;
+        gameObject.layer = _layerMask;
     }
 
     public void KillBoss()

@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Ball;
 using Path;
-using System.Linq;
 
 public class CannonBallCollision : MonoBehaviour
 {
