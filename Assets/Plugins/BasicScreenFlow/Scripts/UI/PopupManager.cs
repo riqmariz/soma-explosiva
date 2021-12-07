@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PopupManager : Singleton<PopupManager>
@@ -53,7 +54,7 @@ public class PopupManager : Singleton<PopupManager>
         if (popup == null)
         {
             //Debug.Log("Not in cache");
-            var foundPopups = Resources.FindObjectsOfTypeAll<T>();
+            var foundPopups = Resources.FindObjectsOfTypeAll<T>().Where(x => x.gameObject.scene.isLoaded).ToArray();
             if (foundPopups.Length > 0)
             {
                 return (T)lRUCache.Access(foundPopups[0]);

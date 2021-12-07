@@ -17,6 +17,8 @@ public class BossQuestionManager : MonoBehaviour
     private Event onValidHit;
     [SerializeField] 
     private Event onKillBoss;
+    [SerializeField] 
+    private float timeToTakeFirstQuestion = 3f;
 
     private List<QuestionSO> runtimeBossQuestions;
     private QuestionSO currentQuestion;
@@ -27,7 +29,7 @@ public class BossQuestionManager : MonoBehaviour
     }
     private void Start()
     {
-        NextQuestion();
+        Timers.CreateClock(gameObject,timeToTakeFirstQuestion,null,NextQuestion);
     }
     private void InitRuntimeQuestions()
     {
