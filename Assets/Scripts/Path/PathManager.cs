@@ -109,6 +109,8 @@ namespace Path
         public void SpawnBallAt(int hitIndex,int index, int value) 
         {
             Debug.Log("Spawn: \nHitIndex: " + hitIndex + "\nindex: " + index + "\nvalue: " + value);
+            if (hitIndex < 0)
+                return;
             var lastBall = m_currentSpawnedBalls[hitIndex];
 
             var ball = Instantiate(m_ballPrefab, transform).GetComponentInChildren<PathBall>();
@@ -120,6 +122,9 @@ namespace Path
             
             for (int i = hitIndex; i >= 0; i--) 
             {
+                //if (m_currentSpawnedBalls[i].awatingCollision)
+                //    break;
+
                 m_currentSpawnedBalls[i].OffsetPosition(+0.75f);
             }
             
@@ -185,10 +190,24 @@ namespace Path
                     {
                         m_currentSpawnedBalls[i].SetSpeed(0);
                     }
-                }
-                else 
-                {
-                    Debug.LogError("Sei q poha é essa não");
+
+                    if (m_currentSpawnedBalls.Count > matchIndex 
+                        && m_currentSpawnedBalls[matchIndex - 1].Value == m_currentSpawnedBalls[matchIndex].Value) 
+                    {
+                        int awaiters = 0;
+                        for (int i = matchIndex - 1; i >= 0; i--)
+                        {
+                            if (m_currentSpawnedBalls[i].awatingCollision) 
+                            {
+                                if (awaiters == 0)
+                                    awaiters++;
+                                else
+                                    break;
+                            }
+                            m_currentSpawnedBalls[i].SetSpeed(-6);
+                        }
+                    }
+
                 }
             }
         }
@@ -204,6 +223,7 @@ namespace Path
 
                 m_currentSpawnedBalls[i].SetSpeed(speed);
             }
+            IdentifyMatches(index,m_currentSpawnedBalls[index].Value);
         }
     }
 }
