@@ -26,6 +26,8 @@ namespace Ball
         private void UpdateField() 
         {
             valueField.text = Value.ToString();
+            var meshRenderer = GetComponentInChildren<MeshRenderer>();
+            GetComponentInChildren<BallColorManager>().SetColor(meshRenderer, _value);
         }
 
         public void ApplyModifier(Func<int,int> modifier) 

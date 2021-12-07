@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: 5093196894112283559}
   - component: {fileID: 6664493218512956454}
   - component: {fileID: 6755586859641365511}
+  - component: {fileID: 7450121411866320555}
   - component: {fileID: 5093196894112283552}
   - component: {fileID: 5093196894112283553}
   - component: {fileID: 5093196894112283558}
@@ -292,6 +293,26 @@ MonoBehaviour:
   m_jillisBeforeBall: {fileID: 6080277258005768671}
   m_value: 0
   m_valueText: {fileID: 4831157662730846387}
+--- !u!114 &7450121411866320555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5093196894112283556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c1f28b43087db46a56fcb9a41bf848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_colors:
+  - {fileID: 2100000, guid: d310e2ae19e11d34e867b25f14cbe3a8, type: 2}
+  - {fileID: 2100000, guid: 2c20f56d0d402424298f5190521c4dae, type: 2}
+  - {fileID: 2100000, guid: fcffb188e2a9df44e9bb566255536d83, type: 2}
+  - {fileID: 2100000, guid: 52683798ecf1944488aa4455eefd4118, type: 2}
+  - {fileID: 2100000, guid: 37ae07907877c4e43a4d44eb2664f758, type: 2}
+  - {fileID: 2100000, guid: 2369ea274cc6e8044a17c205d6bae34d, type: 2}
+  values: 010000000200000003000000040000000500000006000000
 --- !u!33 &5093196894112283552
 MeshFilter:
   m_ObjectHideFlags: 0

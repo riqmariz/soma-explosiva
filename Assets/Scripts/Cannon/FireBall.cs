@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Ball;
+using TMPro;
 using UnityEngine;
 
 
@@ -12,6 +13,11 @@ public class FireBall : MonoBehaviour
     [SerializeField] private float ballSpeed = 4;
     [SerializeField] private ModifierManager modManager;
     [SerializeField] private float fireRate = 2f;
+    [SerializeField] private List<int> m_possibleValues;
+    [SerializeField] private TextMeshPro m_currentValueDisplay;
+    [SerializeField] private MeshRenderer m_currentBall;
+
+    private int m_currentValue = 0;
     public delegate int ModifierDelegate(int value);
     private ModifierDelegate currentModifier;
 
@@ -23,6 +29,8 @@ public class FireBall : MonoBehaviour
     {
         currentModifier = modManager.CurrentModifier.ModifierMethod;
         modManager.ModifierListUpdated.AddListener((list) => { currentModifier = modManager.CurrentModifier.ModifierMethod; });
+        m_currentValue = SortValue();
+        
     }
 
     public void Fire()
@@ -37,7 +45,9 @@ public class FireBall : MonoBehaviour
         ball.Speed = ballSpeed;
 
         var valueHolder = ball.GetComponent<HoldValue>();
+        valueHolder.Value = m_currentValue;
         ApplyModifier(currentModifier, valueHolder);
+        m_currentValue = SortValue();
     }
 
     public void SetCurrentModifier(ModifierDelegate modifier) 
@@ -70,5 +80,13 @@ public class FireBall : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(InitialBallPosition,1);
+    }
+
+    private int SortValue()
+    {
+        var random = Random.Range(0, m_possibleValues.Count);
+        m_currentValueDisplay.text = m_possibleValues[random].ToString();
+        m_currentBall.GetComponent<BallColorManager>().SetColor(m_currentBall, m_possibleValues[random]);
+        return m_possibleValues[random];
     }
 }

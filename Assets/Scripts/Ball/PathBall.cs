@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Cinemachine;
 using DG.Tweening;
 using Path;
@@ -54,6 +55,7 @@ namespace Ball
             SetPosition(position);
             SetValue(value);
             SetSpeed(speed);
+            SetColor(value);
         }
 
         private void SetValue(int value)
@@ -66,6 +68,14 @@ namespace Ball
         {
             m_speedMultiplier = speed;
             m_cartController.m_Speed = m_speedMultiplier * m_speed;
+        }
+
+        private void SetColor(int value)
+        {
+            var meshRenderer = GetComponent<MeshRenderer>();
+            var ballColorManager = GetComponent<BallColorManager>();
+            
+            ballColorManager.SetColor(meshRenderer, value);
         }
 
         public void SetPosition(float position)

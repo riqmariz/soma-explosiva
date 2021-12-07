@@ -26,8 +26,12 @@ namespace Path
         private int currentComboCount = 0;
         #endregion
 
+        #region Properties
         public List<PathBall> Balls => m_currentSpawnedBalls;
-        
+        public List<int> PossibleValues => m_possibleValues;
+        #endregion
+
+
         private void Start()
         {
             if (m_currentSpawnedBalls == null)
