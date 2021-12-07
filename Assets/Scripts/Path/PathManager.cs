@@ -64,6 +64,7 @@ namespace Path
 
         public void SpawnBallAt(int hitIndex,int index, int value) 
         {
+            Debug.Log("Spawn: \nHitIndex: " + hitIndex + "\nindex: " + index + "\nvalue: " + value);
             var lastBall = m_currentSpawnedBalls[hitIndex];
 
             var ball = Instantiate(m_ballPrefab, transform).GetComponentInChildren<PathBall>();
@@ -116,12 +117,48 @@ namespace Path
         {
             if (matchesToDestroy.Count >= 3)
             {
-                foreach (var ball in matchesToDestroy)
+                int matchIndex = -1;
+                for (int i = 0; i < matchesToDestroy.Count ; i++)
                 {
-                    Debug.Log(ball.Value);
+                    var ball = matchesToDestroy[i];
+                    if (i == matchesToDestroy.Count - 1) 
+                    {
+                        matchIndex = m_currentSpawnedBalls.IndexOf(ball);
+                    }
+                    
+
                     m_currentSpawnedBalls.Remove(ball);
                     Destroy(ball.transform.parent.gameObject);
+
                 }
+                
+                if (matchIndex >= 1)
+                {
+                    Debug.Log(matchIndex - 1);
+                    m_currentSpawnedBalls[matchIndex - 1].AwaitCollisionToSetSpeed();
+
+                    for (int i = matchIndex - 1; i >= 0; i--) 
+                    {
+                        m_currentSpawnedBalls[i].SetSpeed(0);
+                    }
+                }
+                else 
+                {
+                    Debug.LogError("Sei q poha é essa não");
+                }
+            }
+        }
+
+        public void SendSpeedFoward(PathBall ball, float speed) 
+        {
+            int index = m_currentSpawnedBalls.IndexOf(ball);
+
+            for (int i = index; i >= 0; i--) 
+            {
+                if (m_currentSpawnedBalls[i].awatingCollision)
+                    break;
+
+                m_currentSpawnedBalls[i].SetSpeed(speed);
             }
         }
     }

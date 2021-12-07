@@ -1,6 +1,7 @@
 ﻿using System;
 using Cinemachine;
 using DG.Tweening;
+using Path;
 using TMPro;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ namespace Ball
 {
     public class PathBall : MonoBehaviour
     {
+        public bool awatingCollision = false;
+
         #region Cart
         [Header("Cart")]
         [SerializeField] private CinemachineDollyCart m_cartController;
@@ -73,6 +76,42 @@ namespace Ball
         public void OffsetPosition(float offset)
         {
             m_cartController.m_Position += offset;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (awatingCollision) 
+            {
+                var pathBall = other.GetComponent<PathBall>();
+                if (pathBall && pathBall.Speed > .01f) 
+                {
+                    awatingCollision = false;
+                    RemoveRb();
+                    GameObject.FindObjectOfType<PathManager>().SendSpeedFoward(this, other.GetComponent<PathBall>().Speed);
+                }
+            }
+
+        }
+
+        private void RemoveRb() 
+        {
+            var rb = GetComponent<Rigidbody>();
+
+            if (rb)
+                Destroy(rb);
+        }
+
+        private void AddRb() 
+        {
+            var rb = gameObject.AddComponent<Rigidbody>();
+
+            rb.useGravity = false;
+        }
+
+        public void AwaitCollisionToSetSpeed() 
+        {
+            AddRb();
+            awatingCollision = true;
         }
     }
 }
