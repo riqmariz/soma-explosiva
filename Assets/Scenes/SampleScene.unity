@@ -586,11 +586,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5708304efb0fe1343804466e4a189b40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_path: {fileID: 904823881}
+  m_currentSpawnedBalls: []
   m_ballPrefab: {fileID: 5093196894067277235, guid: 162584e2383cc3046bd603267c3fa28f,
     type: 3}
   m_ballsToSpawn: 100
-  m_path: {fileID: 904823881}
-  m_currentSpawnedBalls: []
+  m_twoBallsComboPercentage: 60
+  m_threeBallsComboPercentage: 50
+  m_fourBallsComboPercentage: 40
 --- !u!4 &1181017179
 Transform:
   m_ObjectHideFlags: 0
