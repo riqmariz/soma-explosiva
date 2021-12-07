@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using Ball;
 using Path;
-using System.Linq;
 
 public class CannonBallCollision : MonoBehaviour
 {
@@ -30,5 +28,13 @@ public class CannonBallCollision : MonoBehaviour
 
             Destroy(transform.parent.gameObject);
         }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        var takeDamage = other.gameObject.GetComponentInChildren<ITakeDamage>();
+        //temp call to hold value
+        var holdValue = GetComponentInParent<HoldValue>();
+        takeDamage?.TakeDamage(holdValue.gameObject,holdValue.Value);
     }
 }
