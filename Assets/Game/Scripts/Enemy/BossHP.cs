@@ -29,10 +29,12 @@ public class BossHP : MonoBehaviour, ITakeDamage
     }
     public bool TakeDamage(GameObject damager,int targetValue,int damageToApply)
     {
+        var destroyTimer = 0f;
         if (canTakeDamage)
         {
             if (ValidHitByTargetValue(targetValue))
             {
+                destroyTimer = 0.05f;
                 Debug.Log("VALID HIT ON BOSS");
                 var hp = bossHp.Value;
                 bossHp.Value = Mathf.Max(hp - damageToApply, 0);
@@ -63,7 +65,7 @@ public class BossHP : MonoBehaviour, ITakeDamage
                 onInvalidHit.Raise();
             }
             //temp destroy
-            Destroy(damager.gameObject,0.05f);
+            Destroy(damager.gameObject,destroyTimer);
         }
 
         return false;
