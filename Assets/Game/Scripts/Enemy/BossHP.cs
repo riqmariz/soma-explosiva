@@ -1,6 +1,5 @@
 ﻿using SharedData.Values;
 using UnityEngine;
-using Utility;
 using Event = SharedData.Events.Event;
 
 public class BossHP : MonoBehaviour, ITakeDamage
@@ -17,13 +16,15 @@ public class BossHP : MonoBehaviour, ITakeDamage
     private Event onInvalidHit;
     [SerializeField] 
     private Event onValidHit;
-    
+
     private bool canTakeDamage = true;
     private LayerMask _layerMask;
+    public static float _InvulnerableTime = 0;
     
     //todo check if call the initialization on awake or on start
     private void Start()
     {
+        _InvulnerableTime = invulnerabilityTimeAfterDamage;
         bossHp.Value = initHp;
         //todo init boss target value later
     }
@@ -53,9 +54,7 @@ public class BossHP : MonoBehaviour, ITakeDamage
                         invulnerabilityTimeAfterDamage,
                         StartInvulnerability,
                         EndInvulnerability
-                        );
-                    //put this line on an animation script later
-                    //gameObject.GetComponent<SpriteRenderer>().AlphaFlash(invulnerabilityTimeAfterDamage, 0, 0.5f);
+                    );
                     return true;
                 }
             }
