@@ -37,12 +37,16 @@ public class BossQuestionTalkPopup : GenericPopup
     }
     public void RequestShow()
     {
-        //temp time scale here
-        Time.timeScale = 0f;
+        
         PopupManager.GetInstance().ShowPopup<BossQuestionTalkPopup>();
+        //temp time scale here
+        Debug.Log("[Temp] Pause Game");
+        Time.timeScale = 0f;
     }
     public override void RequestHide()
     {
+        //temp call
+        Debug.Log("[Temp] Resume Game");
         Time.timeScale = 1f;
         PopupManager.GetInstance().ClosePopup<BossQuestionTalkPopup>();
     }

@@ -178,6 +178,8 @@ namespace Path
 
         private void DestroyMatches(List<PathBall> matchesToDestroy)
         {
+            float speed = m_currentSpawnedBalls[m_currentSpawnedBalls.Count - 1].Speed;
+
             if (matchesToDestroy.Count >= 3)
             {
                 int matchIndex = -1;
@@ -195,6 +197,7 @@ namespace Path
 
                 }
                 
+
                 if (matchIndex >= 1)
                 {
                     Debug.Log(matchIndex - 1);
@@ -222,6 +225,15 @@ namespace Path
                         }
                     }
 
+                    if (m_currentSpawnedBalls[m_currentSpawnedBalls.Count - 1].Speed <= .01f) 
+                    {
+                        for (int i = m_currentSpawnedBalls.Count - 1; i >= 0; i--) 
+                        {
+                            if (m_currentSpawnedBalls[i].awatingCollision && i != m_currentSpawnedBalls.Count-1)
+                                break;
+                            m_currentSpawnedBalls[i].SetSpeed(speed);
+                        }
+                    }
                 }
             }
         }
