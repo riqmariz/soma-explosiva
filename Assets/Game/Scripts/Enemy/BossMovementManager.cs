@@ -1,12 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Event = SharedData.Events.Event;
 
 public class BossMovementManager : MonoBehaviour
 {
     [SerializeField] 
-    private List<BossMovementPoint> bmps;
+    private List<BossPath> pathList;
     [SerializeField] 
     private MovementComponent movementComponent;
+    [SerializeField] 
+    private Event changePathEvent;
+    
     [SerializeField] 
     private bool startMoving = true;
 
@@ -15,14 +20,23 @@ public class BossMovementManager : MonoBehaviour
     private bool isMoving;
     public bool IsMoving => isMoving;
 
+    private List<BossPath> runtimePaths;
     private List<BossMovementPoint> runtimeBmps;
     private BossMovementPoint currentBmp;
+    private BossPath currentPath;
 
-    private void Awake()
+    private void Start()
     {
         isMoving = startMoving;
+        ChangeToNextPath();
         currentBmp = GetNextPoint();
         ForceGoToBMP(currentBmp,GetNextPoint());
+        changePathEvent.AddCallback(ChangeToNextPath);
+    }
+
+    private void OnDestroy()
+    {
+        changePathEvent.RemoveCallback(ChangeToNextPath);
     }
 
     private void ForceGoToBMP(BossMovementPoint pointToGO, BossMovementPoint nextToGO)
@@ -35,11 +49,8 @@ public class BossMovementManager : MonoBehaviour
     {
         if (runtimeBmps == null || runtimeBmps.Count <= 0)
         {
-            if (bmps.Count > 0)
-            {
-                runtimeBmps = new List<BossMovementPoint>(bmps);
-            }
-            else
+            runtimeBmps = new List<BossMovementPoint>(currentPath.BossMovementPointList);
+            if (runtimeBmps.Count < 2) 
             {
                 Debug.LogError("error on the size of the bmp");
             }
@@ -49,6 +60,25 @@ public class BossMovementManager : MonoBehaviour
         runtimeBmps.Remove(nextPoint);
         
         return nextPoint;
+    }
+
+    private void ChangeToNextPath()
+    {
+        if (runtimePaths == null || runtimePaths.Count <= 0)
+        {
+            if (pathList.Count > 0)
+            {
+                runtimePaths = new List<BossPath>(pathList);
+            } else
+            {
+                Debug.LogError("error on the size of the pathlist");
+            }
+        }
+
+        var nextPath = runtimePaths[0];
+        runtimePaths.Remove(nextPath);
+        currentPath = nextPath;
+        runtimeBmps = null;
     }
     private void Update()
     {
