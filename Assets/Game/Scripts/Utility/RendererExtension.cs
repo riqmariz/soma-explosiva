@@ -1,14 +1,14 @@
-﻿using System.Collections;
-using System.Runtime.CompilerServices;
+﻿
 using UnityEngine;
 
 namespace Utility
 {
-    public static class SpriteRendererExtension
+    public static class RendererExtension
     {
         #region Private Fields
         private static readonly Material FlashMaterial = Resources.Load("WhiteFlash") as Material;
         private static readonly Material SpriteDefaultMaterial = Resources.Load("SpriteLitDefault_Material") as Material;
+        private static readonly Material FlashMaterial3d = Resources.Load("Flash3D") as Material;
         #endregion
 
         #region Utility Methods
@@ -24,6 +24,32 @@ namespace Utility
                         spriteRenderer.material = SpriteDefaultMaterial;
                     else
                         WhiteFlash(spriteRenderer,duration,repeat-1);
+                }));
+        }
+
+        public static void Flash(this Renderer renderer, float duration, int repeat = 1,Material endMaterial = null)
+        {
+            var halfDuration = duration / 2;
+            if (endMaterial == null)
+            {
+                endMaterial = renderer.material;
+            }
+            
+            Debug.Log("calling flash with: duration: "+duration+", repeat: "+repeat);
+            Timers.CreateClock(
+                renderer.gameObject, 
+                halfDuration,
+                () => {renderer.material = FlashMaterial3d;},
+                (() =>
+                {
+                    renderer.material = endMaterial;
+                    if(repeat > 1)
+                        Timers.CreateClock(
+                            renderer.gameObject,
+                            halfDuration,
+                            () => { },
+                            () => { Flash(renderer, duration, repeat - 1, endMaterial); }
+                        );
                 }));
         }
 
@@ -45,6 +71,8 @@ namespace Utility
                         AlphaFlash(spriteRenderer,duration,repeat-1,alpha);
                 }));
         }
+        
+        
         #endregion
     }
 }

@@ -789,6 +789,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: Temp Boss Skull
       objectReference: {fileID: 0}
+    - target: {fileID: 6329471516237000774, guid: b2b50385a8b88ed42b283b532304f6c1,
+        type: 3}
+      propertyPath: bossQuestions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329471516237000774, guid: b2b50385a8b88ed42b283b532304f6c1,
+        type: 3}
+      propertyPath: bossQuestions.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 94b5a85a552931e42b2b497edce0a24e,
+        type: 2}
+    - target: {fileID: 6329471516237000774, guid: b2b50385a8b88ed42b283b532304f6c1,
+        type: 3}
+      propertyPath: bossQuestions.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 94b5a85a552931e42b2b497edce0a24e,
+        type: 2}
     - target: {fileID: 6524897922594253458, guid: b2b50385a8b88ed42b283b532304f6c1,
         type: 3}
       propertyPath: pathList.Array.data[0]
@@ -1396,6 +1413,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93d3e516fb0bc0478a83c31d993e823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2118785334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2062074325345171626, guid: b2b50385a8b88ed42b283b532304f6c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1004541370}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2118785346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118785334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1631a08c9e53b464eb390fd0b46f180f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onValidHitOnBoss: {fileID: 11400000, guid: 5ab4195b1204dc547b1fdf3da59cd5a5, type: 2}
+  flashesCount: 12
 --- !u!1001 &7311837309422450853
 PrefabInstance:
   m_ObjectHideFlags: 0

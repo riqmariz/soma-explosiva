@@ -6,8 +6,6 @@ public class BossAfterValidHitController : MonoBehaviour
     private Event onValidHit;
     [SerializeField] 
     private BossMovementManager movementManager;
-    [SerializeField] 
-    private float idleAfterHitDuration = 3f;
     private void Awake()
     {
         onValidHit.AddCallback(AfterHitRoutine);
@@ -17,7 +15,7 @@ public class BossAfterValidHitController : MonoBehaviour
         //just stops for now
         Timers.CreateClock(
             gameObject,
-            idleAfterHitDuration,
+            BossHP._InvulnerableTime,
             movementManager.StopMovement,
             movementManager.StartMovement
             );
