@@ -1,4 +1,5 @@
-﻿using SharedData.Values;
+﻿using Ball;
+using SharedData.Values;
 using UnityEngine;
 using Event = SharedData.Events.Event;
 
@@ -16,6 +17,12 @@ public class BossHP : MonoBehaviour, ITakeDamage
     private Event onInvalidHit;
     [SerializeField] 
     private Event onValidHit;
+    [SerializeField] 
+    private Rigidbody rigidbody;
+    [SerializeField] 
+    private float knockbackForce;
+    [SerializeField] 
+    private ForceMode forceMode;
 
     private bool canTakeDamage = true;
     private LayerMask _layerMask;
@@ -30,12 +37,10 @@ public class BossHP : MonoBehaviour, ITakeDamage
     }
     public bool TakeDamage(GameObject damager,int targetValue,int damageToApply)
     {
-        var destroyTimer = 0f;
         if (canTakeDamage)
         {
             if (ValidHitByTargetValue(targetValue))
             {
-                destroyTimer = 0.05f;
                 Debug.Log("VALID HIT ON BOSS");
                 var hp = bossHp.Value;
                 bossHp.Value = Mathf.Max(hp - damageToApply, 0);
@@ -55,6 +60,19 @@ public class BossHP : MonoBehaviour, ITakeDamage
                         StartInvulnerability,
                         EndInvulnerability
                     );
+                    var ballDir = damager.GetComponentInParent<MoveToDirection>();
+                    Vector3 direction = Vector3.zero;
+                    if (ballDir)
+                    {
+                        direction = ballDir.Direction;
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Not found MoveToDirection on damager object");
+                        direction = transform.position - damager.transform.position;
+                    }
+                    rigidbody.AddForce(knockbackForce * direction.normalized,forceMode);
+                    Destroy(damager);
                     return true;
                 }
             }
@@ -62,9 +80,8 @@ public class BossHP : MonoBehaviour, ITakeDamage
             {
                 Debug.Log("Invalid hit on boss -> hitted with: "+targetValue+", should be hitted with: "+bossTargetValue.Value);
                 onInvalidHit.Raise();
+                Destroy(damager);
             }
-            //temp destroy
-            Destroy(damager.gameObject,destroyTimer);
         }
 
         return false;
