@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Event = SharedData.Events.Event;
 
 public class BossMovementManager : MonoBehaviour
 {
-    [SerializeField] 
     private List<BossPath> pathList;
     [SerializeField] 
     private MovementComponent movementComponent;
@@ -27,6 +27,8 @@ public class BossMovementManager : MonoBehaviour
 
     private void Start()
     {
+        var paths = FindObjectsOfType<BossPath>();
+        pathList = paths.OrderBy(x => x.Order).ToList();
         isMoving = startMoving;
         ChangeToNextPath();
         currentBmp = GetNextPoint();

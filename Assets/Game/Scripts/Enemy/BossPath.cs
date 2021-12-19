@@ -3,8 +3,11 @@ using UnityEngine;
 
 public class BossPath : MonoBehaviour
 {
-    private List<BossMovementPoint> _bossMovementPointList;
+    [SerializeField] 
+    private int order;
+    public int Order => order;
 
+    private List<BossMovementPoint> _bossMovementPointList;
     public List<BossMovementPoint> BossMovementPointList => _bossMovementPointList;
 
     private void Awake()
