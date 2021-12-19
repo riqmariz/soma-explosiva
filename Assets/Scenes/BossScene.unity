@@ -717,6 +717,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1968265556774767832, guid: b2b50385a8b88ed42b283b532304f6c1,
+        type: 3}
+      propertyPath: endRotation.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968265556774767832, guid: b2b50385a8b88ed42b283b532304f6c1,
+        type: 3}
+      propertyPath: animDuration
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2056752426236878792, guid: b2b50385a8b88ed42b283b532304f6c1,
         type: 3}
       propertyPath: m_LocalPosition.x
