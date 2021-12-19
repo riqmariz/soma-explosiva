@@ -31,4 +31,4 @@ Material:
     - _OverlayAmount: 0.5
     - __dirty: 0
     m_Colors:
-    - _BaseColor: {r: 0.42776817, g: 0.63235295, b: 0.45445314, a: 0}
+    - _BaseColor: {r: 0, g: 0.8490566, b: 0.48302314, a: 1}
