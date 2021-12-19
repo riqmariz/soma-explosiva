@@ -110,6 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d005510e0311a9e48b1c9e2d00aa19a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  holdValue: {fileID: 1517921328553295299}
+  particleOnCollision: {fileID: 3218166376431139962, guid: bb4d5e2ac6866874b98392880ce0f528,
+    type: 3}
 --- !u!114 &7956134467580841493
 MonoBehaviour:
   m_ObjectHideFlags: 0

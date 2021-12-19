@@ -5,6 +5,10 @@ using Path;
 
 public class CannonBallCollision : MonoBehaviour
 {
+    [SerializeField] 
+    private HoldValue holdValue;
+    [SerializeField] 
+    private GameObject particleOnCollision;
     private void OnTriggerEnter(Collider other)
     {
         var otherBall = other.gameObject.GetComponent<PathBall>();
@@ -33,8 +37,13 @@ public class CannonBallCollision : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         var takeDamage = other.gameObject.GetComponentInChildren<ITakeDamage>();
-        //temp call to hold value
-        var holdValue = GetComponentInParent<HoldValue>();
-        takeDamage?.TakeDamage(holdValue.gameObject,holdValue.Value);
+        if (takeDamage != null)
+        {
+            takeDamage.TakeDamage(holdValue.gameObject,holdValue.Value);
+            var particle = Instantiate(particleOnCollision,other.contacts[0].point,Quaternion.identity);
+            //the particle is destroying itself
+            //Destroy(particle,10);
+        }
+        Destroy(holdValue.gameObject);
     }
 }

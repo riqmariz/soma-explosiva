@@ -72,7 +72,6 @@ public class BossHP : MonoBehaviour, ITakeDamage
                         direction = transform.position - damager.transform.position;
                     }
                     rigidbody.AddForce(knockbackForce * direction.normalized,forceMode);
-                    Destroy(damager);
                     return true;
                 }
             }
@@ -80,7 +79,6 @@ public class BossHP : MonoBehaviour, ITakeDamage
             {
                 Debug.Log("Invalid hit on boss -> hitted with: "+targetValue+", should be hitted with: "+bossTargetValue.Value);
                 onInvalidHit.Raise();
-                Destroy(damager);
             }
         }
 
