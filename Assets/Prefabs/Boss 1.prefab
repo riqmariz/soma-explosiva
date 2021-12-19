@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3057889185086634067}
   - component: {fileID: 6329471516237000774}
   - component: {fileID: 6524897922594253458}
+  - component: {fileID: 9021949781432073015}
   - component: {fileID: 6329471516237000773}
   - component: {fileID: 5361546542653724499}
   - component: {fileID: 2118785346}
@@ -187,6 +188,21 @@ MonoBehaviour:
   movementComponent: {fileID: 6329471516237000773}
   changePathEvent: {fileID: 11400000, guid: 9d2a0298a25676740b8718334d7aece3, type: 2}
   startMoving: 1
+--- !u!114 &9021949781432073015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062074325345171626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7ee3c31ae85f4542af63d4bb1e81d7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onValidHitOnBoss: {fileID: 11400000, guid: 5ab4195b1204dc547b1fdf3da59cd5a5, type: 2}
+  movementComponent: {fileID: 6329471516237000773}
+  bonusMovementOnHit: 0.25
 --- !u!114 &6329471516237000773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21732265ee5bcd0419c4096dab964cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 4
+  movementSpeed: 2
 --- !u!54 &5361546542653724499
 Rigidbody:
   m_ObjectHideFlags: 0
