@@ -254,18 +254,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 312919734}
   m_CullTransparentMesh: 0
---- !u!114 &487179942 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7311837309607575043, guid: 18636635079f53644b9b2472fdb738e1,
-    type: 3}
-  m_PrefabInstance: {fileID: 7311837309422450853}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c93d3e516fb0bc0478a83c31d993e823, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &539089490 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9059083184604198494, guid: e28e6f506270fc9498d4401564482937,
@@ -787,40 +775,8 @@ PrefabInstance:
     - target: {fileID: 2062074325345171626, guid: b2b50385a8b88ed42b283b532304f6c1,
         type: 3}
       propertyPath: m_Name
-      value: Temp Boss Skull
+      value: Boss 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6329471516237000774, guid: b2b50385a8b88ed42b283b532304f6c1,
-        type: 3}
-      propertyPath: bossQuestions.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6329471516237000774, guid: b2b50385a8b88ed42b283b532304f6c1,
-        type: 3}
-      propertyPath: bossQuestions.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 94b5a85a552931e42b2b497edce0a24e,
-        type: 2}
-    - target: {fileID: 6329471516237000774, guid: b2b50385a8b88ed42b283b532304f6c1,
-        type: 3}
-      propertyPath: bossQuestions.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 94b5a85a552931e42b2b497edce0a24e,
-        type: 2}
-    - target: {fileID: 6524897922594253458, guid: b2b50385a8b88ed42b283b532304f6c1,
-        type: 3}
-      propertyPath: pathList.Array.data[0]
-      value: 
-      objectReference: {fileID: 1912525342}
-    - target: {fileID: 6524897922594253458, guid: b2b50385a8b88ed42b283b532304f6c1,
-        type: 3}
-      propertyPath: pathList.Array.data[1]
-      value: 
-      objectReference: {fileID: 487179942}
-    - target: {fileID: 6524897922594253458, guid: b2b50385a8b88ed42b283b532304f6c1,
-        type: 3}
-      propertyPath: pathList.Array.data[2]
-      value: 
-      objectReference: {fileID: 1481706640}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2b50385a8b88ed42b283b532304f6c1, type: 3}
 --- !u!1 &1181017177
@@ -1141,18 +1097,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1362488600}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1481706640 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7311837310633620533, guid: 18636635079f53644b9b2472fdb738e1,
-    type: 3}
-  m_PrefabInstance: {fileID: 7311837309422450853}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c93d3e516fb0bc0478a83c31d993e823, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1510148158
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,38 +1345,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646019473}
   m_CullTransparentMesh: 0
---- !u!114 &1912525342 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7311837311282211515, guid: 18636635079f53644b9b2472fdb738e1,
-    type: 3}
-  m_PrefabInstance: {fileID: 7311837309422450853}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c93d3e516fb0bc0478a83c31d993e823, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &2118785334 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2062074325345171626, guid: b2b50385a8b88ed42b283b532304f6c1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1004541370}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2118785346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2118785334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1631a08c9e53b464eb390fd0b46f180f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onValidHitOnBoss: {fileID: 11400000, guid: 5ab4195b1204dc547b1fdf3da59cd5a5, type: 2}
-  flashesCount: 12
 --- !u!1001 &7311837309422450853
 PrefabInstance:
   m_ObjectHideFlags: 0

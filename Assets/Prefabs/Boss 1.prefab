@@ -19,8 +19,9 @@ GameObject:
   - component: {fileID: 6524897922594253458}
   - component: {fileID: 6329471516237000773}
   - component: {fileID: 5361546542653724499}
+  - component: {fileID: 2118785346}
   m_Layer: 8
-  m_Name: Temp Boss Skull
+  m_Name: Boss 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +117,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onValidHit: {fileID: 11400000, guid: 5ab4195b1204dc547b1fdf3da59cd5a5, type: 2}
   movementManager: {fileID: 6524897922594253458}
-  idleAfterHitDuration: 3
 --- !u!114 &6329471516237000775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,9 +162,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossQuestions:
-  - {fileID: 11400000, guid: c7310ab81f0538f42badddafe1662bb3, type: 2}
-  - {fileID: 11400000, guid: 7d67500ed3999df45b1b682b5c5284de, type: 2}
-  - {fileID: 11400000, guid: 94b5a85a552931e42b2b497edce0a24e, type: 2}
+  - {fileID: 11400000, guid: 9490c8b2c01c0604c86ce8f251d10dcd, type: 2}
+  - {fileID: 11400000, guid: 32fef39482a57054ba8195ae4c5524a4, type: 2}
+  - {fileID: 11400000, guid: bef45813054e22542bc7644ea1a613b3, type: 2}
+  - {fileID: 11400000, guid: 00fbc1d6383945b46a29ed9f9f32ddcd, type: 2}
+  - {fileID: 11400000, guid: 38474f6694755d442bfc7bdc8939b58f, type: 2}
   targetValue: {fileID: 11400000, guid: 67147d463762e7945bac250a80d26093, type: 2}
   questionValue: {fileID: 11400000, guid: 9cbc3a283bb314e4db05cf199150a865, type: 2}
   onValidHit: {fileID: 11400000, guid: 5ab4195b1204dc547b1fdf3da59cd5a5, type: 2}
@@ -182,10 +184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea9f3eb3987f70f4d95bc96a9f61f9f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   movementComponent: {fileID: 6329471516237000773}
   changePathEvent: {fileID: 11400000, guid: 9d2a0298a25676740b8718334d7aece3, type: 2}
   startMoving: 1
@@ -218,6 +216,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &2118785346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062074325345171626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1631a08c9e53b464eb390fd0b46f180f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onValidHitOnBoss: {fileID: 11400000, guid: 5ab4195b1204dc547b1fdf3da59cd5a5, type: 2}
+  flashesCount: 12
 --- !u!1 &5685390504330859460
 GameObject:
   m_ObjectHideFlags: 0
