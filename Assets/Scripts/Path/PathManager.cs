@@ -145,6 +145,12 @@ namespace Path
             IdentifyMatches(index, ball.Value);
         }
 
+        private void IdentifyMatchesOnQueueCollision(PathBall b1, PathBall b2) 
+        {
+            if (b1.Value == b2.Value)
+                IdentifyMatches(m_currentSpawnedBalls.IndexOf(b1),b1.Value);
+        }
+
         private void IdentifyMatches(int currentBallIndex, int targetValue)
         {
             var matches = new List<PathBall>();
@@ -249,7 +255,8 @@ namespace Path
 
                 m_currentSpawnedBalls[i].SetSpeed(speed);
             }
-            IdentifyMatches(index,m_currentSpawnedBalls[index].Value);
+            if(index < m_currentSpawnedBalls.Count)
+                IdentifyMatchesOnQueueCollision(ball,m_currentSpawnedBalls[m_currentSpawnedBalls.IndexOf(ball)+1]);
         }
     }
 }
