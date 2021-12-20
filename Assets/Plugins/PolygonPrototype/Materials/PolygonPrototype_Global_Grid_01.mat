@@ -25,10 +25,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - OverlayAmount: 0.5
+    - OverlayAmount: 0.25
     - _Falloff: 50
     - _GridScale: 1
     - _OverlayAmount: 0.5
     - __dirty: 0
     m_Colors:
-    - _BaseColor: {r: 1, g: 0.724138, b: 0, a: 0}
+    - _BaseColor: {r: 1, g: 0.724138, b: 0, a: 1}
