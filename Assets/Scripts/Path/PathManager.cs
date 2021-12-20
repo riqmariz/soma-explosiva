@@ -136,10 +136,28 @@ namespace Path
             
             for (int i = hitIndex; i >= 0; i--) 
             {
-                //if (m_currentSpawnedBalls[i].awatingCollision)
-                //    break;
+                if (m_currentSpawnedBalls[i].awatingCollision)
+                {
+                    if (i < m_currentSpawnedBalls.Count - 1) 
+                    {
+                        var dist = Vector3.Distance(m_currentSpawnedBalls[i].transform.position, m_currentSpawnedBalls[i + 1].transform.position);
 
-                m_currentSpawnedBalls[i].OffsetPosition(+0.75f);
+                        if (dist < 0.75f)
+                        {
+                            m_currentSpawnedBalls[i].OffsetPosition(dist);
+                            m_currentSpawnedBalls[i].awatingCollision = false;
+                            m_currentSpawnedBalls[i].SetSpeed(m_currentSpawnedBalls[i + 1].Speed);
+                        }
+                        else 
+                        {
+                            break;
+                        }
+                    }
+                }
+                else 
+                {
+                    m_currentSpawnedBalls[i].OffsetPosition(+0.75f);
+                }
             }
             
             IdentifyMatches(index, ball.Value);
