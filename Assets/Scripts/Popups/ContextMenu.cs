@@ -17,10 +17,6 @@ public class ContextMenu : GenericPopup
     {
         UpdateUI();
     }
-    private void Start()
-    {
-        UpdateUI();
-    }
 
     public void UpdateUI()
     {

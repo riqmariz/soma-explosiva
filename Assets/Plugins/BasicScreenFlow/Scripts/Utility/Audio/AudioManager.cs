@@ -103,7 +103,7 @@ public class AudioManager : Singleton<AudioManager>
         return this.isMusicPlaying;
     }
 
-    public bool IsMusicPlaying() => isMusicPlaying;
+    public bool IsMusicPlaying() { TryInit(); return isMusicPlaying; }
 
     public bool IsMusicPlaying(string name)
     {
@@ -208,7 +208,7 @@ public class AudioManager : Singleton<AudioManager>
         return this.isSoundPlaying;
     }
 
-    public bool IsSoundPlaying() => isSoundPlaying;
+    public bool IsSoundPlaying() { TryInit(); return isSoundPlaying; }
 
     private void SaveSoundOn()
     {
