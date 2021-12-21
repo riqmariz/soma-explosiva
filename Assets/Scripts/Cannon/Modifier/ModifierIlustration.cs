@@ -32,6 +32,7 @@ public class ModifierIlustration : MonoBehaviour
 
     private void Start()
     {
+        initialScale = modifierIlustrationPrefab.transform.localScale;
         InstantiateModifiersIlustration();
         manager.ModifierListUpdated.AddListener((list) => RotateIlustrations(1));
         initialScale = ilustrations[0].transform.localScale;
