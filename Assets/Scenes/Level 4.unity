@@ -539,7 +539,7 @@ GameObject:
   - component: {fileID: 870268036}
   - component: {fileID: 870268035}
   m_Layer: 0
-  m_Name: line
+  m_Name: Path Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

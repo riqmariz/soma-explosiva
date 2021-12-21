@@ -1005,7 +1005,7 @@ GameObject:
   - component: {fileID: 1249768289}
   - component: {fileID: 1249768288}
   m_Layer: 0
-  m_Name: line
+  m_Name: Path Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1558,7 +1558,7 @@ MonoBehaviour:
       previousControlOffset: {x: 0, y: 0, z: 0}
       nextControlOffset: {x: 0, y: 0, z: 0}
       width: 0.25
-    owner: {fileID: 0}
+    owner: {fileID: 1249768288}
     option:
       startRatio: 0
       endRatio: 1
