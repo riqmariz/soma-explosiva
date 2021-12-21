@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -200,18 +200,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18636635079f53644b9b2472fdb738e1, type: 3}
---- !u!114 &539089490 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9059083184604198494, guid: e28e6f506270fc9498d4401564482937,
-    type: 3}
-  m_PrefabInstance: {fileID: 9059083185143278604}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79dfc1e9449d784fa85f21748ac0f65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,18 +871,6 @@ MeshRenderer:
     type: 3}
   m_PrefabInstance: {fileID: 9059083185143278604}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1341847653 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9059083184258349877, guid: e28e6f506270fc9498d4401564482937,
-    type: 3}
-  m_PrefabInstance: {fileID: 9059083185143278604}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5542b6148c1891643845ec0029ee6dad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!43 &1683147295
 Mesh:
   m_ObjectHideFlags: 0
@@ -1902,25 +1878,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1352312256620964084, guid: 27f60eb18f0927e408e6fd2dc3e94e97,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2985634529501354609, guid: 27f60eb18f0927e408e6fd2dc3e94e97,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 539089490}
     - target: {fileID: 2985634530006599719, guid: 27f60eb18f0927e408e6fd2dc3e94e97,
         type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 2985634530006599719, guid: 27f60eb18f0927e408e6fd2dc3e94e97,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2985634530006599720, guid: 27f60eb18f0927e408e6fd2dc3e94e97,
         type: 3}
@@ -2032,18 +1993,7 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2985634530364845801, guid: 27f60eb18f0927e408e6fd2dc3e94e97,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1341847653}
-    - target: {fileID: 8640082889108447341, guid: 27f60eb18f0927e408e6fd2dc3e94e97,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4198337632077809539, guid: 27f60eb18f0927e408e6fd2dc3e94e97, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27f60eb18f0927e408e6fd2dc3e94e97, type: 3}
 --- !u!1001 &8076129131653791522
 PrefabInstance:

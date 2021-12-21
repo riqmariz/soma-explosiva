@@ -346,8 +346,9 @@ GameObject:
   - component: {fileID: 2985634529501354611}
   - component: {fileID: 2985634529501354608}
   - component: {fileID: 2985634529501354609}
+  - component: {fileID: 1949415019515726195}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Switch Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -452,18 +453,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2985634529501354608}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SwitchModifiers
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &1949415019515726195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2985634529501354511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f529c02719f6efe49b577c5a1afb5327, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2985634530006599719
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,6 +584,7 @@ GameObject:
   - component: {fileID: 2985634530364845803}
   - component: {fileID: 2985634530364845800}
   - component: {fileID: 2985634530364845801}
+  - component: {fileID: 8600799389926117268}
   m_Layer: 5
   m_Name: FireBallButton
   m_TagString: Untagged
@@ -687,18 +690,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2985634530364845800}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Fire
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &8600799389926117268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2985634530364845799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21d59a532b239c041b43603adaddf63b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2985634530451543175
 GameObject:
   m_ObjectHideFlags: 0
@@ -2438,6 +2442,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PausePopup
       objectReference: {fileID: 0}
+    - target: {fileID: 6811878421926911812, guid: 1e2959ccc19cef84396cec8f7e7616e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6811878421926911815, guid: 1e2959ccc19cef84396cec8f7e7616e2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2545,6 +2554,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e2959ccc19cef84396cec8f7e7616e2, type: 3}
+--- !u!224 &1352312256620964087 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6811878421926911815, guid: 1e2959ccc19cef84396cec8f7e7616e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 5497988599181129648}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6872669624540253978 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1381592555988220074, guid: 1e2959ccc19cef84396cec8f7e7616e2,
@@ -2557,9 +2572,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e3070acf64a30409ed20e29e8dd038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &1352312256620964087 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6811878421926911815, guid: 1e2959ccc19cef84396cec8f7e7616e2,
-    type: 3}
-  m_PrefabInstance: {fileID: 5497988599181129648}
-  m_PrefabAsset: {fileID: 0}
