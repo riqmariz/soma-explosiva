@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_ballPrefab: {fileID: 5093196894067277235, guid: 162584e2383cc3046bd603267c3fa28f,
     type: 3}
   m_ballsToSpawn: 2147483647
-  m_possibleValues: 02000000060000000a0000000e000000
+  m_possibleValues: 01000000030000000500000007000000
   m_twoBallsComboPercentage: 70
   m_threeBallsComboPercentage: 60
   m_fourBallsComboPercentage: 50
@@ -1569,7 +1569,7 @@ PrefabInstance:
     - target: {fileID: 9059083184258349877, guid: e28e6f506270fc9498d4401564482937,
         type: 3}
       propertyPath: m_possibleValues.Array.data[2]
-      value: 11
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9059083184258349877, guid: e28e6f506270fc9498d4401564482937,
         type: 3}
@@ -1579,7 +1579,7 @@ PrefabInstance:
     - target: {fileID: 9059083184258349877, guid: e28e6f506270fc9498d4401564482937,
         type: 3}
       propertyPath: m_possibleValues.Array.data[1]
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9059083184604198493, guid: e28e6f506270fc9498d4401564482937,
         type: 3}
@@ -1590,13 +1590,13 @@ PrefabInstance:
         type: 3}
       propertyPath: modifiers.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 0aabd1327dcda2c4494147a1dfbd1c8e,
+      objectReference: {fileID: 11400000, guid: bf379397b4c1a9545976a900c32052d5,
         type: 2}
     - target: {fileID: 9059083184604198494, guid: e28e6f506270fc9498d4401564482937,
         type: 3}
       propertyPath: modifiers.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 021a551f2db28414f877a36543dc4cb4,
+      objectReference: {fileID: 11400000, guid: f1bfdc22a8b14904d86449cd7c299107,
         type: 2}
     - target: {fileID: 9059083184604198495, guid: e28e6f506270fc9498d4401564482937,
         type: 3}
