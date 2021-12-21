@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Boss 3 - 4
   m_EditorClassIdentifier: 
   questionTexts:
-  - Alfredo tem dinheiro para comprar chocolate e Rita tem R$ 6,00 a menos que Alfredo.
-    Sabendo que Rita tem R$ 8,00, quanto custa o chocolate?
-  answerTargetValue: 14
+  - Bruno tinha 13 bolas de gude. Ele perdeu algumas e ficou com 8. Quantas bolas
+    de gude ele perdeu?
+  answerTargetValue: 5

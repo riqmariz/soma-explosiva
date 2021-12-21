@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Boss 3 - 1
   m_EditorClassIdentifier: 
   questionTexts:
-  - "Carlos tem 4 anos. Ana \xE9 2 anos mais velha que Carlos. Quantos anos Ana tem?"
-  answerTargetValue: 6
+  - "Se Julio der 2 figurinhas a Mario, Julio ainda ficar\xE1 com 3 figurinhas. Quantas
+    figurinhas Julio tem?"
+  answerTargetValue: 5
