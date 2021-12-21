@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -29,9 +30,14 @@ public class LevelNode : MonoBehaviour, IPointerDownHandler
 
     private LevelSelectManager _levelSelectManager;
 
+    private void Awake()
+    {
+        sceneLevelName = GameManager.GetInstance().LevelSceneNames[index];
+    }
+
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("level clicked: "+index+", available: "+available);
+        //Debug.Log("level clicked: "+index+", available: "+available);
         _levelSelectManager.Selected(this);
     }
     public void SetLevelSelectManager(LevelSelectManager levelSelectManager)

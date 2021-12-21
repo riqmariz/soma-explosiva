@@ -7,6 +7,12 @@ public class GameManager : Singleton<GameManager>
 {
     public string menuSceneName = "MainMenu";
 
+    [SerializeField]
+    private List<string> levelSceneNames;
+    public List<string> LevelSceneNames => levelSceneNames;
+
+    public int currentLevelSceneNameIndex;
+
     public void Pause()
     {
         Time.timeScale = 0f;

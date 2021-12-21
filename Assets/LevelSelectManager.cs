@@ -34,8 +34,7 @@ public class LevelSelectManager : MonoBehaviour
     private PlayerData _playerData;
     private SaveSystemManager _saveSystemManager;
     private List<LevelNode> _levelNodes;
-
-    private int selectedLevelNode = 0;
+    
     private Sequence _sequence;
     private void Awake()
     {
@@ -56,8 +55,8 @@ public class LevelSelectManager : MonoBehaviour
             _sequence = DOTween.Sequence();
         }
 
-        selectedLevelNode = levelNode.Index;
-        var position =_levelNodes[selectedLevelNode].transform.position;
+        GameManager.GetInstance().currentLevelSceneNameIndex = levelNode.Index;
+        var position =_levelNodes[levelNode.Index].transform.position;
         var rotation = selectGameObject.transform.rotation.eulerAngles;
         _sequence.Append(
             this.selectGameObject.transform
@@ -71,11 +70,12 @@ public class LevelSelectManager : MonoBehaviour
         _sequence.OnComplete(() => _sequence = null);
         _sequence.Play();
 
-        playButton.interactable = selectedLevelNode <= _playerData.lastLevelAvailable;
+        playButton.interactable = levelNode.Index <= _playerData.lastLevelAvailable;
     }
 
     public void Play()
     {
-        SceneLoader.LoadUsingLoadingScene(_levelNodes[selectedLevelNode].SceneLevelName);
+        var index = GameManager.GetInstance().currentLevelSceneNameIndex;
+        SceneLoader.LoadUsingLoadingScene(_levelNodes[index].SceneLevelName);
     }
 }
