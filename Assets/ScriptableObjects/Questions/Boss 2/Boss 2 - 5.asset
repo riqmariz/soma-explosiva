@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99021d0728d3b7f4489460ff52285504, type: 3}
   m_Name: Boss 2 - 5
   m_EditorClassIdentifier: 
-  questionTexts: []
-  answerTargetValue: 0
+  questionTexts:
+  - "Paulo tem 6 anos a menos que sua irm\xE3 Elisa. Elisa tem 8 anos. Qual a idade
+    de Paulo?"
+  answerTargetValue: 2

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99021d0728d3b7f4489460ff52285504, type: 3}
   m_Name: Boss 2 - 1
   m_EditorClassIdentifier: 
-  questionTexts: []
-  answerTargetValue: 0
+  questionTexts:
+  - "Carlos tem 4 anos. Ana \xE9 2 anos mais velha que Carlos. Quantos anos Ana tem?"
+  answerTargetValue: 6

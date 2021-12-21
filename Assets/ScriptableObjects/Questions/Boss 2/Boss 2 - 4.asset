@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99021d0728d3b7f4489460ff52285504, type: 3}
   m_Name: Boss 2 - 4
   m_EditorClassIdentifier: 
-  questionTexts: []
-  answerTargetValue: 0
+  questionTexts:
+  - Alfredo tem dinheiro para comprar chocolate e Rita tem R$ 6,00 a menos que Alfredo.
+    Sabendo que Rita tem R$ 8,00, quanto custa o chocolate?
+  answerTargetValue: 14
