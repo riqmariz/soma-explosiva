@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5744301915821169215}
   - component: {fileID: 1517921328553295299}
   m_Layer: 0
-  m_Name: Jillis Ball
+  m_Name: Cannon Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
