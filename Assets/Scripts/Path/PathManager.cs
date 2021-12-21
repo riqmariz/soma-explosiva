@@ -44,6 +44,8 @@ namespace Path
                 m_possibleValues = new List<int>();
             
             SpawnBall();
+            
+            GameManager.GetInstance().Resume();
         }
 
         private void Update()

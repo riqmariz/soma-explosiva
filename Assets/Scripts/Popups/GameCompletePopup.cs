@@ -11,10 +11,23 @@ public class GameCompletePopup : GenericPopup
         base.Show();
     }
     public void RequestShow() => PopupManager.GetInstance().ShowPopup<GameCompletePopup>();
-    public override void RequestHide() => PopupManager.GetInstance().ClosePopup<GameCompletePopup>();
+    public override void RequestHide()
+    {
+        GameManager.GetInstance().Resume();
+        PopupManager.GetInstance().ClosePopup<GameCompletePopup>();
+    }
 
-    public void Home() => GameManager.GetInstance().Home();
-    public void Reset() => GameManager.GetInstance().Reset();
+    public void Home()
+    {
+        GameManager.GetInstance().Resume();
+        GameManager.GetInstance().Home();
+    }
+
+    public void Reset()
+    {
+        GameManager.GetInstance().Resume();
+        GameManager.GetInstance().Reset();
+    }
 
     public void NextLevel() 
     {
