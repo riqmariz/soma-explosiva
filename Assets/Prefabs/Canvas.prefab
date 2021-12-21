@@ -216,13 +216,14 @@ GameObject:
   - component: {fileID: 2985634529296322709}
   - component: {fileID: 2985634529296322706}
   - component: {fileID: 2985634529296322707}
+  - component: {fileID: 3818968693751851607}
   m_Layer: 5
   m_Name: Open Question
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2985634529296322704
 RectTransform:
   m_ObjectHideFlags: 0
@@ -240,8 +241,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 105, y: -81}
-  m_SizeDelta: {x: 160, y: 86.55658}
+  m_AnchoredPosition: {x: 44, y: -38}
+  m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &2985634529296322709
 CanvasRenderer:
@@ -270,8 +271,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 708b80e38f3c6a6479d51c280fe875bf, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -322,18 +323,22 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2985634529296322706}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: RequestShow
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &3818968693751851607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2985634529296322705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23765e02d0a1c52418000a38bcd2d0f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableOnAwake: 1
+  targetBossValue: {fileID: 11400000, guid: 67147d463762e7945bac250a80d26093, type: 2}
+  _bossQuestionTalkPopup: {fileID: 4673455335834445196}
 --- !u!1 &2985634529501354511
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,17 +772,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Open Question
+  m_text: '?'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 124fb572f77aa2f4d8b4f11f454289ec, type: 2}
+  m_sharedMaterial: {fileID: -7211692298346220665, guid: 124fb572f77aa2f4d8b4f11f454289ec,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278215138
+  m_fontColor: {r: 0.8862745, g: 0.38039216, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -794,10 +800,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 72
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -2420,6 +2426,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2185325026814393036}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4673455335834445196 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6811878421926911808, guid: c7c92128ad826ef47b4bb3305552724b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2185325026814393036}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f18e08704a37d1b4392e9d096957d1ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5497988599181129648
 PrefabInstance:
   m_ObjectHideFlags: 0
