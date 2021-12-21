@@ -30,6 +30,7 @@ namespace Path
             
             Debug.Log("Ball entered end point");
             m_ballsToLose--;
+            FindObjectOfType<PathManager>().Balls.Remove(ball);
             Destroy(ball.transform.parent.gameObject);
         }
     }
