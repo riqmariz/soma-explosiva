@@ -29,6 +29,19 @@ public class GameManager : Singleton<GameManager>
         Resume();
     }
 
+    public bool HasNextLevel => currentLevelSceneNameIndex < levelSceneNames.Count - 1;
+
+    public bool NextLevel() 
+    {
+        if (HasNextLevel) 
+        {
+            currentLevelSceneNameIndex++;
+            SceneLoader.LoadUsingLoadingScene(LevelSceneNames[currentLevelSceneNameIndex]);
+            return true;
+        }
+        return false;
+    }
+
     public void Reset()
     {
         var currScene = SceneManager.GetActiveScene().name;
