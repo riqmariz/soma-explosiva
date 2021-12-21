@@ -33,5 +33,6 @@ public class ModifierManager : MonoBehaviour
         modifiers.RemoveAt(0);
         modifiers.Insert(modifiers.Count, firstMod);
         ModifierListUpdated.Invoke(modifiers);
+        AudioManager.GetInstance().PlayAudio("switch_modfier");
     }
 }
