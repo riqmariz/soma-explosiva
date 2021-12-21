@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using Utility;
 using Event = SharedData.Events.Event;
 public class BossFlashAnimationOnValidHit : MonoBehaviour
@@ -7,6 +8,8 @@ public class BossFlashAnimationOnValidHit : MonoBehaviour
     private Event onValidHitOnBoss;
     [SerializeField] 
     private int flashesCount = 12;
+    [SerializeField] 
+    private List<Renderer> rendererList;
 
     private void Awake()
     {
@@ -20,6 +23,9 @@ public class BossFlashAnimationOnValidHit : MonoBehaviour
 
     private void FlashAnimation()
     {
-        gameObject.GetComponent<Renderer>().Flash(BossHP._InvulnerableTime/flashesCount, flashesCount);
+        foreach (var renderer in rendererList)
+        {
+            renderer.Flash(BossHP._InvulnerableTime/flashesCount, flashesCount);
+        }
     }
 }
