@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1626,7 +1626,7 @@ MonoBehaviour:
   m_ballPrefab: {fileID: 5093196894067277235, guid: 162584e2383cc3046bd603267c3fa28f,
     type: 3}
   m_ballsToSpawn: 100
-  m_possibleValues: 02000000030000000500000006000000
+  m_possibleValues: 03000000050000000600000008000000
   m_twoBallsComboPercentage: 70
   m_threeBallsComboPercentage: 60
   m_fourBallsComboPercentage: 50
@@ -2038,11 +2038,27 @@ PrefabInstance:
       propertyPath: m_currentBall
       value: 
       objectReference: {fileID: 1283879301}
+    - target: {fileID: 9059083184258349877, guid: e28e6f506270fc9498d4401564482937,
+        type: 3}
+      propertyPath: m_possibleValues.Array.data[0]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059083184258349877, guid: e28e6f506270fc9498d4401564482937,
+        type: 3}
+      propertyPath: m_possibleValues.Array.data[1]
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 9059083184604198493, guid: e28e6f506270fc9498d4401564482937,
         type: 3}
       propertyPath: m_Name
       value: CannonParts
       objectReference: {fileID: 0}
+    - target: {fileID: 9059083184604198494, guid: e28e6f506270fc9498d4401564482937,
+        type: 3}
+      propertyPath: modifiers.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: bf379397b4c1a9545976a900c32052d5,
+        type: 2}
     - target: {fileID: 9059083184604198495, guid: e28e6f506270fc9498d4401564482937,
         type: 3}
       propertyPath: m_LocalPosition.x

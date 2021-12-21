@@ -1420,7 +1420,7 @@ MonoBehaviour:
   m_ballPrefab: {fileID: 5093196894067277235, guid: 162584e2383cc3046bd603267c3fa28f,
     type: 3}
   m_ballsToSpawn: 100
-  m_possibleValues: 02000000030000000500000006000000
+  m_possibleValues: 01000000040000000500000008000000
   m_twoBallsComboPercentage: 70
   m_threeBallsComboPercentage: 60
   m_fourBallsComboPercentage: 50
@@ -1686,6 +1686,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: CannonParts
       objectReference: {fileID: 0}
+    - target: {fileID: 9059083184604198494, guid: e28e6f506270fc9498d4401564482937,
+        type: 3}
+      propertyPath: modifiers.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: f1bfdc22a8b14904d86449cd7c299107,
+        type: 2}
+    - target: {fileID: 9059083184604198494, guid: e28e6f506270fc9498d4401564482937,
+        type: 3}
+      propertyPath: modifiers.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 60b37fee55fe51c4397e2399690e6581,
+        type: 2}
     - target: {fileID: 9059083184604198495, guid: e28e6f506270fc9498d4401564482937,
         type: 3}
       propertyPath: m_LocalPosition.x
