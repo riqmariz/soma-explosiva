@@ -207,7 +207,6 @@ GameObject:
   - component: {fileID: 7528089930464725344}
   - component: {fileID: 7528089930464725347}
   - component: {fileID: 7528089930464725359}
-  - component: {fileID: 7528089930464725358}
   m_Layer: 0
   m_Name: CannonFireComp
   m_TagString: Untagged
@@ -316,32 +315,7 @@ MonoBehaviour:
   fireRate: 2
   m_possibleValues: 0100000004000000
   m_currentValueDisplay: {fileID: 0}
---- !u!114 &7528089930464725358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7528089930464725346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9ad8d5aab18c5445beb010c8d6dc970, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Click:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7528089930464725359}
-        m_MethodName: Fire
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  m_currentBall: {fileID: 0}
 --- !u!1 &9178078750720438568
 GameObject:
   m_ObjectHideFlags: 0
