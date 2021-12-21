@@ -19,13 +19,16 @@ public class BossQuestionManager : MonoBehaviour
     private Event onKillBoss;
     [SerializeField] 
     private float timeToTakeFirstQuestion = 3f;
+    [SerializeField] 
+    private float timeToTakeQuestionAfterHit = 1.5f;
 
     private List<QuestionSO> runtimeBossQuestions;
     private QuestionSO currentQuestion;
     private void Awake()
     {
-        onValidHit.AddCallback(NextQuestion);
+        onValidHit.AddCallback(WaitAndThenNextQuestion);
         onKillBoss.AddCallback(RemoveCallbacks);
+        targetValue.Value = -1;
     }
     private void Start()
     {
@@ -34,6 +37,16 @@ public class BossQuestionManager : MonoBehaviour
     private void InitRuntimeQuestions()
     {
         runtimeBossQuestions = new List<QuestionSO>(bossQuestions);
+    }
+
+    private void WaitAndThenNextQuestion()
+    {
+        Timers.CreateClock(
+            gameObject,
+            timeToTakeQuestionAfterHit,
+            null,
+            NextQuestion
+            );
     }
     private void NextQuestion()
     {
@@ -52,7 +65,7 @@ public class BossQuestionManager : MonoBehaviour
     }
     private void RemoveCallbacks()
     {
-        onValidHit.RemoveCallback(NextQuestion);
+        onValidHit.RemoveCallback(WaitAndThenNextQuestion);
         onKillBoss.RemoveCallback(RemoveCallbacks);
     }
     private void OnDestroy()

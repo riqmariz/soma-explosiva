@@ -177,7 +177,8 @@ MonoBehaviour:
   questionValue: {fileID: 11400000, guid: 9cbc3a283bb314e4db05cf199150a865, type: 2}
   onValidHit: {fileID: 11400000, guid: 5ab4195b1204dc547b1fdf3da59cd5a5, type: 2}
   onKillBoss: {fileID: 11400000, guid: 7bf80d1ae95c4a44c97677e39139c396, type: 2}
-  timeToTakeFirstQuestion: 1
+  timeToTakeFirstQuestion: 3
+  timeToTakeQuestionAfterHit: 1.5
 --- !u!114 &6524897922594253458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,6 +252,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onValidHitOnBoss: {fileID: 11400000, guid: 5ab4195b1204dc547b1fdf3da59cd5a5, type: 2}
   flashesCount: 12
+  rendererList:
+  - {fileID: 2073910345698133170}
+  - {fileID: 5324346988574539796}
+  - {fileID: 5671741561213669348}
 --- !u!114 &1968265556774767832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,6 +272,7 @@ MonoBehaviour:
   endRotation: {x: 30, y: 0, z: 0}
   animDuration: 0.5
   animRotateMode: 0
+  onValidHitBoss: {fileID: 11400000, guid: 5ab4195b1204dc547b1fdf3da59cd5a5, type: 2}
 --- !u!1 &5685390504330859460
 GameObject:
   m_ObjectHideFlags: 0
