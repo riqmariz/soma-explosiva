@@ -43,6 +43,14 @@ public class GameManager : Singleton<GameManager>
         return false;
     }
 
+    public void CompleteCurrentLevel() 
+    {
+        var ss = SaveSystemManager.GetInstance();
+        var pd = ss.GetPlayerData();
+        pd.levels[currentLevelSceneNameIndex] = true;
+        ss.Save();
+    }
+
     public void Reset()
     {
         Resume();
