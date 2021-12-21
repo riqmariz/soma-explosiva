@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class GameOverPopup : GenericPopup
 {
+    public override void Show()
+    {
+        GameManager.GetInstance().Pause();
+        base.Show();
+    }
     public void RequestShow() => PopupManager.GetInstance().ShowPopup<GameOverPopup>();
     public override void RequestHide() => PopupManager.GetInstance().ClosePopup<GameOverPopup>();
 

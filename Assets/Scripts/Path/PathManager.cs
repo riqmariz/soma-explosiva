@@ -57,6 +57,14 @@ namespace Path
                     m_ballsToSpawn--;
                 }
             }
+            else 
+            {
+                if (m_currentSpawnedBalls.Count <= 0) 
+                {
+                    PopupManager.GetInstance().ShowPopup<GameCompletePopup>();
+                    this.enabled = false;
+                }
+            }
         }
 
         private bool ShouldSpawnNextBall(PathBall currentBall)
