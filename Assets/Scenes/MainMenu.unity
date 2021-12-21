@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2193,7 +2193,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.100006, y: 8.1}
+  m_AnchoredPosition: {x: -2.100006, y: 8.099998}
   m_SizeDelta: {x: -258.06378, y: -80.01132}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1508800042
@@ -2653,7 +2653,7 @@ Canvas:
   m_GameObject: {fileID: 1648687669}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 1785830202}
   m_PlaneDistance: 8.46
   m_PixelPerfect: 0
