@@ -20,7 +20,7 @@ namespace Path
         private void GameOver()
         {
             Debug.Log("Game Over");
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            PopupManager.GetInstance().ShowPopup<GameOverPopup>();
         }
 
         private void OnTriggerEnter(Collider other)
