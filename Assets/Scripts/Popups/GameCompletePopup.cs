@@ -18,17 +18,9 @@ public class GameCompletePopup : GenericPopup
 
     public void NextLevel() 
     {
-        string scene = SceneManager.GetActiveScene().name;
-        int level = int.Parse(""+scene[scene.Length-1]);
-        var sceneName = scene.Substring(0,scene.Length-1) + (level+1);
-        var hasScene = SceneManager.GetSceneByName(sceneName) != null;
-        if (hasScene)
+        if (!GameManager.GetInstance().NextLevel())
         {
-            SceneLoader.LoadUsingLoadingScene(sceneName);
-        }
-        else 
-        {
-            Home();
+            GameManager.GetInstance().Home();
         }
     }
 }
