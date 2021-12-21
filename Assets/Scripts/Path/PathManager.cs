@@ -153,7 +153,7 @@ namespace Path
             }
 
             if (IdentifyMatches(index, ball.Value))
-                AudioManager.GetInstance().PlayAudio("explosion");
+                AudioManager.GetInstance().PlayAudio("combo");
         }
 
         private void IdentifyMatchesOnQueueCollision(PathBall b1, PathBall b2) 

@@ -41,6 +41,7 @@ public class CannonBallCollision : MonoBehaviour
         {
             takeDamage.TakeDamage(holdValue.gameObject,holdValue.Value);
             var particle = Instantiate(particleOnCollision,other.contacts[0].point,Quaternion.identity);
+            AudioManager.GetInstance().PlayAudio("explosion");
             //the particle is destroying itself
             //Destroy(particle,10);
         }
