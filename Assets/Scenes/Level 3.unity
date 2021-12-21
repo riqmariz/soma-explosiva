@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -845,7 +845,7 @@ MonoBehaviour:
   m_ballPrefab: {fileID: 5093196894067277235, guid: 162584e2383cc3046bd603267c3fa28f,
     type: 3}
   m_ballsToSpawn: 100
-  m_possibleValues: 02000000030000000500000006000000
+  m_possibleValues: 03000000050000000700000009000000
   m_twoBallsComboPercentage: 70
   m_threeBallsComboPercentage: 60
   m_fourBallsComboPercentage: 50
@@ -1919,14 +1919,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9059083184258349877, guid: e28e6f506270fc9498d4401564482937,
         type: 3}
+      propertyPath: m_possibleValues.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059083184258349877, guid: e28e6f506270fc9498d4401564482937,
+        type: 3}
       propertyPath: m_currentBall
       value: 
       objectReference: {fileID: 1283879301}
+    - target: {fileID: 9059083184258349877, guid: e28e6f506270fc9498d4401564482937,
+        type: 3}
+      propertyPath: m_possibleValues.Array.data[2]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059083184258349877, guid: e28e6f506270fc9498d4401564482937,
+        type: 3}
+      propertyPath: m_possibleValues.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9059083184604198493, guid: e28e6f506270fc9498d4401564482937,
         type: 3}
       propertyPath: m_Name
       value: CannonParts
       objectReference: {fileID: 0}
+    - target: {fileID: 9059083184604198494, guid: e28e6f506270fc9498d4401564482937,
+        type: 3}
+      propertyPath: modifiers.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 11fa3d964625e364380c708ddbe80a51,
+        type: 2}
+    - target: {fileID: 9059083184604198494, guid: e28e6f506270fc9498d4401564482937,
+        type: 3}
+      propertyPath: modifiers.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 021a551f2db28414f877a36543dc4cb4,
+        type: 2}
     - target: {fileID: 9059083184604198495, guid: e28e6f506270fc9498d4401564482937,
         type: 3}
       propertyPath: m_LocalPosition.x

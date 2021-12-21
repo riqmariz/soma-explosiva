@@ -306,13 +306,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_colors:
-  - {fileID: 2100000, guid: d310e2ae19e11d34e867b25f14cbe3a8, type: 2}
-  - {fileID: 2100000, guid: 2c20f56d0d402424298f5190521c4dae, type: 2}
   - {fileID: 2100000, guid: fcffb188e2a9df44e9bb566255536d83, type: 2}
+  - {fileID: 2100000, guid: 2c20f56d0d402424298f5190521c4dae, type: 2}
+  - {fileID: 2100000, guid: d310e2ae19e11d34e867b25f14cbe3a8, type: 2}
   - {fileID: 2100000, guid: 52683798ecf1944488aa4455eefd4118, type: 2}
   - {fileID: 2100000, guid: 37ae07907877c4e43a4d44eb2664f758, type: 2}
   - {fileID: 2100000, guid: 2369ea274cc6e8044a17c205d6bae34d, type: 2}
-  values: 010000000200000003000000040000000500000006000000
+  - {fileID: 2100000, guid: fba02a6edae7dae499a57bc4f1d9871b, type: 2}
+  - {fileID: 2100000, guid: 85816dfad5967474d99174a29ed39746, type: 2}
+  - {fileID: 2100000, guid: 04d315ab1111df648bb870fd4f010d8c, type: 2}
+  - {fileID: 2100000, guid: 61259cdb4b82ec74299261c5612975ed, type: 2}
+  - {fileID: 2100000, guid: 717af23e07ea389449a25dce6e749678, type: 2}
+  - {fileID: 2100000, guid: 6c6e25e51f7be2e45bb654f38d3fe93d, type: 2}
+  values: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000e000000
 --- !u!33 &5093196894112283552
 MeshFilter:
   m_ObjectHideFlags: 0
