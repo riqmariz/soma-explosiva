@@ -9,9 +9,26 @@ public class GameOverPopup : GenericPopup
         GameManager.GetInstance().Pause();
         base.Show();
     }
-    public void RequestShow() => PopupManager.GetInstance().ShowPopup<GameOverPopup>();
-    public override void RequestHide() => PopupManager.GetInstance().ClosePopup<GameOverPopup>();
+    public void RequestShow()
+    {
+        PopupManager.GetInstance().ShowPopup<GameOverPopup>();
+    }
 
-    public void Home() => GameManager.GetInstance().Home();
-    public void Reset() => GameManager.GetInstance().Reset();
+    public override void RequestHide()
+    {
+        GameManager.GetInstance().Resume();
+        PopupManager.GetInstance().ClosePopup<GameOverPopup>();
+    }
+
+    public void Home()
+    {
+        GameManager.GetInstance().Resume();
+        GameManager.GetInstance().Home();
+    }
+
+    public void Reset()
+    {
+        GameManager.GetInstance().Resume();
+        GameManager.GetInstance().Reset();
+    }
 }

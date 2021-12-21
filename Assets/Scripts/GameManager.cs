@@ -36,6 +36,7 @@ public class GameManager : Singleton<GameManager>
         if (HasNextLevel) 
         {
             currentLevelSceneNameIndex++;
+            GameManager.GetInstance().Resume();
             SceneLoader.LoadUsingLoadingScene(LevelSceneNames[currentLevelSceneNameIndex]);
             return true;
         }
@@ -44,8 +45,8 @@ public class GameManager : Singleton<GameManager>
 
     public void Reset()
     {
+        Resume();
         var currScene = SceneManager.GetActiveScene().name;
         SceneLoader.LoadUsingLoadingScene(currScene);
-        Resume();
     }
 }
