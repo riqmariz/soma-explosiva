@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Boss 3 - 5
   m_EditorClassIdentifier: 
   questionTexts:
-  - "Paulo tem 6 anos a menos que sua irm\xE3 Elisa. Elisa tem 8 anos. Qual a idade
-    de Paulo?"
-  answerTargetValue: 2
+  - "5 crian\xE7as estavam brincando no parquinho. Chegaram mais 2 crian\xE7as para
+    brincar. Quantas crian\xE7as agora est\xE3o brincando no parquinho?"
+  answerTargetValue: 7

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Boss 3 - 2
   m_EditorClassIdentifier: 
   questionTexts:
-  - "M\xE1rcio tem 14 cart\xF5es e Carlos tem 4 cart\xF5es. Quantos cart\xF5es M\xE1rcio
-    tem a mais do que Carlos?"
-  answerTargetValue: 10
+  - "Eduardo tinha 2 carrinhos. Ele ganhou mais 1 carrinho de anivers\xE1rio. Quantos
+    carrinhos ele tem agora?"
+  answerTargetValue: 3
