@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2335,6 +2335,7 @@ GameObject:
   - component: {fileID: 1566325292}
   - component: {fileID: 1566325295}
   - component: {fileID: 1566325296}
+  - component: {fileID: 1566325297}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2377,7 +2378,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7.833675
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2454,6 +2455,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 0
+--- !u!114 &1566325297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566325291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 101c9eebfc0d74440981c042d3a2ba12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneWidth: 20.9
 --- !u!23 &1672529132 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 23129229044559512, guid: c3f6e7fc6c3e6a84b9e112980d679be3,
