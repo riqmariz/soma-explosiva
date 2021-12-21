@@ -151,17 +151,19 @@ namespace Path
 
                 m_currentSpawnedBalls[i].OffsetPosition(+0.75f);
             }
-            
-            IdentifyMatches(index, ball.Value);
+
+            if (IdentifyMatches(index, ball.Value))
+                AudioManager.GetInstance().PlayAudio("explosion");
         }
 
         private void IdentifyMatchesOnQueueCollision(PathBall b1, PathBall b2) 
         {
             if (b1.Value == b2.Value)
-                IdentifyMatches(m_currentSpawnedBalls.IndexOf(b1),b1.Value);
+                if (IdentifyMatches(m_currentSpawnedBalls.IndexOf(b1), b1.Value))
+                    AudioManager.GetInstance().PlayAudio("combo");
         }
 
-        private void IdentifyMatches(int currentBallIndex, int targetValue)
+        private bool IdentifyMatches(int currentBallIndex, int targetValue)
         {
             var matches = new List<PathBall>();
             
@@ -189,15 +191,17 @@ namespace Path
                 }
             }
             
-            DestroyMatches(matches);
+            return DestroyMatches(matches);
         }
 
-        private void DestroyMatches(List<PathBall> matchesToDestroy)
+        private bool DestroyMatches(List<PathBall> matchesToDestroy)
         {
+            bool ret = false;
             float speed = m_currentSpawnedBalls[m_currentSpawnedBalls.Count - 1].Speed;
 
             if (matchesToDestroy.Count >= 3)
             {
+                ret = true;
                 int matchIndex = -1;
                 for (int i = 0; i < matchesToDestroy.Count ; i++)
                 {
@@ -252,6 +256,7 @@ namespace Path
                     }
                 }
             }
+            return ret;
         }
 
         public void SendSpeedFoward(PathBall ball, float speed) 

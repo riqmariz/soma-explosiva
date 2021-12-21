@@ -7,6 +7,11 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] 
     private string levelSelectScene;
 
+    private void Awake()
+    {
+        AudioManager.GetInstance().IsMusicPlaying();
+    }
+
 
     public void GoToLevelSelect()
     {

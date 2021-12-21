@@ -44,6 +44,8 @@ public class FireBall : MonoBehaviour
         ball.transform.position = InitialBallPosition;
         ball.Speed = ballSpeed;
 
+        AudioManager.GetInstance().PlayAudio("fire_ball");
+
         var valueHolder = ball.GetComponent<HoldValue>();
         valueHolder.Value = m_currentValue;
         ApplyModifier(currentModifier, valueHolder);

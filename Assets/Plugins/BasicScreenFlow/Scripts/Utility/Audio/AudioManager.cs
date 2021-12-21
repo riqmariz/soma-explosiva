@@ -18,7 +18,7 @@ public class AudioManager : Singleton<AudioManager>
         isMusicPlaying = playerData._BGMOn;
         isSoundPlaying = playerData._SFXOn;
 
-        //PlayAudio("bgm");
+        PlayAudio("bgm");
     }
 
     private void Start()

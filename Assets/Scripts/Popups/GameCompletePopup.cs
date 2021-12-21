@@ -8,6 +8,7 @@ public class GameCompletePopup : GenericPopup
     public override void Show()
     {
         GameManager.GetInstance().Pause();
+        GameManager.GetInstance().CompleteCurrentLevel();
         base.Show();
     }
     public void RequestShow() => PopupManager.GetInstance().ShowPopup<GameCompletePopup>();
