@@ -89,10 +89,10 @@ public class AudioManager : Singleton<AudioManager>
 
     public Sound GetSound(string name) => Array.Find(_sounds, sound => sound.name == name);
 
-    public bool ToggleMusic()
+    public bool ToggleMusic(bool value)
     {
         TryInit();
-        isMusicPlaying = !isMusicPlaying;
+        isMusicPlaying = value;
         var musics = Array.FindAll(_sounds, sound => sound.IsBGM == true);
         foreach (var music in musics)
         {
@@ -194,10 +194,10 @@ public class AudioManager : Singleton<AudioManager>
         SaveSystemManager.GetInstance().Save();
     }
 
-    public bool ToggleSounds()
+    public bool ToggleSounds(bool value)
     {
         TryInit();
-        isSoundPlaying = !isSoundPlaying;
+        isSoundPlaying = value;
         var sounds = Array.FindAll(_sounds, sound => sound.IsBGM == false);
         foreach (var sound in sounds)
         {
