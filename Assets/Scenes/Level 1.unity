@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1796,7 +1796,7 @@ MonoBehaviour:
       previousControlOffset: {x: 0, y: 0, z: 0}
       nextControlOffset: {x: 0, y: 0, z: 0}
       width: 0.25
-    owner: {fileID: 0}
+    owner: {fileID: 1805709595}
     option:
       startRatio: 0
       endRatio: 1
@@ -2037,7 +2037,13 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1341847653}
-    m_RemovedComponents: []
+    - target: {fileID: 8640082889108447341, guid: 27f60eb18f0927e408e6fd2dc3e94e97,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4198337632077809539, guid: 27f60eb18f0927e408e6fd2dc3e94e97, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 27f60eb18f0927e408e6fd2dc3e94e97, type: 3}
 --- !u!1001 &8076129131653791522
 PrefabInstance:
