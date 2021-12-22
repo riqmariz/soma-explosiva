@@ -29,7 +29,8 @@ public class BossHP : MonoBehaviour, ITakeDamage
     private bool canTakeDamage = true;
     private LayerMask _layerMask;
     public static float _InvulnerableTime = 0;
-    
+    public int BossMaxHP => initHp;
+
     //todo check if call the initialization on awake or on start
     private void Start()
     {
