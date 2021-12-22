@@ -15,7 +15,7 @@ public class BossMovementManager : MonoBehaviour
     [SerializeField] 
     private bool startMoving = true;
 
-    private float MIN_DISTANCE_OFFSET = 0.01f;
+    private float MIN_DISTANCE_OFFSET = 0.1f;
     
     private bool isMoving;
     public bool IsMoving => isMoving;
