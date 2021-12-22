@@ -56,7 +56,7 @@ public class BossQuestionManager : MonoBehaviour
         }
         
         var random = Random.Range(0, runtimeBossQuestions.Count);
-        currentQuestion = bossQuestions[random];
+        currentQuestion = runtimeBossQuestions[random];
         targetValue.Value = currentQuestion.AnswerTargetValue;
         //this event below just triggers when change the reference of the list, not when manipulating
         questionValue.Value = currentQuestion.QuestionTexts;
