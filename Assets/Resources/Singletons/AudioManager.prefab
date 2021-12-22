@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8925730368834063408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6287503346393046380}
+  - component: {fileID: 1334266074313632064}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6287503346393046380
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8925730368834063408}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1334266074313632064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8925730368834063408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b3ce6373c69efd4cb4eadc8f0efa948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ResetInstanceOnDestroy: 0
+  _sounds:
+  - name: fire_ball
+    audioFile: {fileID: 8300000, guid: 8e44cd42ac3859848b2c6b6ec55d67c4, type: 3}
+    volume: 0.5
+    RandomVolume: 0.05
+    pitch: 1
+    RandomPitch: 0.05
+    loop: 0
+    IsBGM: 0
+    source: {fileID: 0}
+  - name: combo
+    audioFile: {fileID: 8300000, guid: 7c5a9c12648810c4ab18aa6c8e2306c8, type: 3}
+    volume: 0.5
+    RandomVolume: 0.05
+    pitch: 1
+    RandomPitch: 0.05
+    loop: 0
+    IsBGM: 0
+    source: {fileID: 0}
+  - name: explosion
+    audioFile: {fileID: 8300000, guid: 0f63b16b3ed48fd4a901623926462a70, type: 3}
+    volume: 0.25
+    RandomVolume: 0.025
+    pitch: 1
+    RandomPitch: 0.05
+    loop: 0
+    IsBGM: 0
+    source: {fileID: 0}
+  - name: switch_modfier
+    audioFile: {fileID: 8300000, guid: 18555ae0091cc964f9b35efa4dc92c16, type: 3}
+    volume: 0.5
+    RandomVolume: 0.05
+    pitch: 1
+    RandomPitch: 0.05
+    loop: 0
+    IsBGM: 0
+    source: {fileID: 0}
+  - name: bgm
+    audioFile: {fileID: 8300000, guid: f6a3fea18928d1144bb47faa60f1a794, type: 3}
+    volume: 0.25
+    RandomVolume: 0
+    pitch: 1
+    RandomPitch: 0
+    loop: 1
+    IsBGM: 1
+    source: {fileID: 0}
+  - name: operation
+    audioFile: {fileID: 8300000, guid: 31b1d85d0054694428858d609e2fc523, type: 3}
+    volume: 0.5
+    RandomVolume: 0.05
+    pitch: 1
+    RandomPitch: 0.05
+    loop: 0
+    IsBGM: 0
+    source: {fileID: 0}
