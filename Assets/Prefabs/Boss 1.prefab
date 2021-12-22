@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 2118785346}
   - component: {fileID: 1968265556774767832}
   - component: {fileID: 9142708139538968929}
-  - component: {fileID: 3951475993581797520}
+  - component: {fileID: 984041783333949149}
   m_Layer: 8
   m_Name: Boss 1
   m_TagString: Untagged
@@ -140,6 +140,7 @@ MonoBehaviour:
   invulnerabilityTimeAfterDamage: 5
   onInvalidHit: {fileID: 11400000, guid: dc1ad3e813e693244a17cf00125c1cc0, type: 2}
   onValidHit: {fileID: 11400000, guid: 5ab4195b1204dc547b1fdf3da59cd5a5, type: 2}
+  onKillBoss: {fileID: 11400000, guid: 7bf80d1ae95c4a44c97677e39139c396, type: 2}
   rigidbody: {fileID: 5361546542653724499}
   knockbackForce: 500
   forceMode: 5
@@ -289,7 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onInvalidHit: {fileID: 11400000, guid: dc1ad3e813e693244a17cf00125c1cc0, type: 2}
   increasePosition: 3
---- !u!114 &3951475993581797520
+--- !u!114 &984041783333949149
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

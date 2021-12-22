@@ -18,6 +18,8 @@ public class BossHP : MonoBehaviour, ITakeDamage
     [SerializeField] 
     private Event onValidHit;
     [SerializeField] 
+    private Event onKillBoss;
+    [SerializeField] 
     private Rigidbody rigidbody;
     [SerializeField] 
     private float knockbackForce;
@@ -104,7 +106,7 @@ public class BossHP : MonoBehaviour, ITakeDamage
 
     public void KillBoss()
     {
-        //todo more complex behaviour on kill
+        onKillBoss.Raise();
         Destroy(gameObject); // temp destroy
     }
 }
