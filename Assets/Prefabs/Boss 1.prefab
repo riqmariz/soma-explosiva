@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 5361546542653724499}
   - component: {fileID: 2118785346}
   - component: {fileID: 1968265556774767832}
+  - component: {fileID: 9142708139538968929}
   m_Layer: 8
   m_Name: Boss 1
   m_TagString: Untagged
@@ -273,6 +274,21 @@ MonoBehaviour:
   animDuration: 0.5
   animRotateMode: 0
   onValidHitBoss: {fileID: 11400000, guid: 5ab4195b1204dc547b1fdf3da59cd5a5, type: 2}
+--- !u!114 &9142708139538968929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062074325345171626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af426b7acb4621e4ebda5933440e42bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onInvalidHit: {fileID: 11400000, guid: dc1ad3e813e693244a17cf00125c1cc0, type: 2}
+  dashSpeed: 200
+  dashDuration: 0.15
 --- !u!1 &5685390504330859460
 GameObject:
   m_ObjectHideFlags: 0
