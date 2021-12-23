@@ -1,6 +1,6 @@
 # Soma Explosiva
 
-Repositório aberto (open source) do Soma Explosiva, protótipo de jogo (não-comercial) que tenta trabalhar as habilidades referentes a adição de crianças, utilizando de contas rápidas com mecânicas divertidas do jogo Zuma e estruturas aditivas.
+Repositório aberto (open source) do Soma Explosiva, protótipo de jogo (não-comercial) que tenta trabalhar as habilidades referentes a adição (para crianças), utilizando de contas rápidas com mecânicas divertidas do jogo Zuma e estruturas aditivas.
 
 Teste o jogo nesta build [Web](https://riqmariz.github.io/) ou teste nesse [APK](https://drive.google.com/file/d/1ghnQ4berkvWRTUhz5joVVXU-aeE6jJSr/view) em seu android
 
