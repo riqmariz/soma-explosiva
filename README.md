@@ -7,7 +7,7 @@ Teste o jogo nesta build [Web](https://riqmariz.github.io/) ou teste nesse [APK]
 ![Alt Text](somaExplosiva2.gif)
 ![Alt Text](somaExplosiva1.gif)
 
-# About
+# Sobre
 
 Sinta-se livre para dar um fork no código e fazer dele seu próprio jogo! Porém, há alguns assets de sons que precisam de créditos, caso o jogo venha a ser lançado comercialmente, e também utilizamos de um pacote pago da Unity Asset store. Nada impede que você troque os assets utilizados do jogo e utilize da mecânica principal. Usem a criatividade para melhorar este jogo!
 
